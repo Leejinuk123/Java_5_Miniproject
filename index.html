@@ -15,11 +15,133 @@
 
   <meta name="theme-color" content="#fafafa">
 </head>
+<style>
+  body{
+    margin: 0;
+  }
+  .intro{
+    background-color: #999999;
+    width: 1000px;
+    height: fit-content;
+    padding-bottom: 50px;
+    margin: 0 auto;
+  }
 
+  .intro .text{
+    height: fit-content;
+  }
+  .intro .text>h1{
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 5px;
+    margin: 0px;
+  }
+  .intro .text>hr{
+    margin: 0 auto;
+    width: 150px;
+    border-color : black;
+    border-width: 4px;
+  }
+
+  .intro ul {
+    border: 1px solid black;
+    list-style-type: none;
+    width: 900px;
+    height: fit-content;
+    margin: 50px auto;
+    padding: 0;
+    text-align: center; /* 가로로 가운데 정렬 */
+  }
+
+  .intro ul > li {
+    display: inline-block;
+    width: calc(23%); /* 4개의 li를 가로로 나누기 위해 23%, 마진 고려하여 조정 */
+    border: 1px solid white;
+    margin: 5px;
+    height: 400px;
+    vertical-align: top; /* 요소들을 상단 정렬 */
+  }
+
+  /*@media screen and (min-width: 1000px) { !*화면이 커질 때*!*/
+  /*  .intro {*/
+  /*    width: 100%; !* 화면이 작을 때 한 줄에 하나의 아이템만 보이도록 조정 *!*/
+  /*  }*/
+  /*}*/
+
+  @media screen and (max-width: 1030px) { /*화면이 작아질 때*/
+    .intro ul > li {
+      width: calc(48%); /* 화면이 작을 때 두 개의 li를 가로로 나누기 위해 48%*/
+    }
+  }
+
+  .intro .outro {
+    border: 1px solid black;
+    width: 950px;
+    height: 250px;
+    margin: 0 auto;
+    background-color: #888888;
+  }
+/*헤더 css*/
+  .header{
+    background-image: url("img/headerImg.svg");
+    background-size: cover; /* 배경 이미지를 요소에 맞게 자동으로 조절합니다 */
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  .header .header_text_box>h2{
+    padding-top: 5px;
+    text-align: center;
+    margin: 0px;
+    font-size: 45px;
+  }
+  .header .header_text_box>p{
+    text-align: center;
+    margin: 0px;
+    font-size: 20px;
+  }
+  a {
+    color: #000; /* 링크 텍스트 색상을 원하는 색상으로 변경 */
+    text-decoration: none; /* 밑줄 제거 */
+  }
+</style>
 <body>
+  <div class="header">
+    <img style="width: 90px; float: left" src="img/nbcamplogo.png">
+    <img style="width: 90px; float: right" src="img/nbcamplogo.png">
+    <div class="header_text_box" id="mainLogo">
+      <h2><a href="index.html">27조</a></h2>
+      <p><b><a href="index.html">00000001</a></b></p>
+    </div>
+  </div>
 
-  <p>index입니다.</p>
+  <div class="intro">
+
+    <div class="intro text">
+      <h1>지역소개</h1>
+      <hr>
+    </div>
+
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <div style="clear: both" class="outro">
+
+    </div>
+  </div>
+
+
 
 </body>
-
+<script>
+  document.getElementById("mainLogo").addEventListener("click", function() {
+    // 다른 HTML 파일로 이동
+    window.location.href = "index.html";
+  });
+</script>
 </html>
