@@ -47,9 +47,10 @@
       background: none;
       border: none;
     }
+
     .detailbtn {
       display: flex;
-      margin: 30px auto 30px 10px ;
+      margin: 30px auto 30px 10px;
     }
 
     .comment-box {
@@ -221,108 +222,13 @@
       <button id="likeButton">🤍 좋아요</button>
     </div>
     <div class="commentbtn">
-      <button id="commentVisibleBtn">💬 댓글</button>
+      <button onclick="openclose()" id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
     </div>
   </div>
-  <div class="comment-box">
-    <div class="comment-input-box">
-      <div class="user-info">
-        <label for="commentNickname"></label>
-        <input type="text" id="commentNickname" placeholder="닉네임(8자리)" maxlength="8">
-        <label for="commentPassword"></label>
-        <input type="password" id="commentPassword" placeholder="비밀번호" maxlength="16">
-      </div>
-      <div class="input-box">
-        <label for="commentInput"></label>
-        <textarea id="commentInput" placeholder="내용 입력" oninput="resize(this)"></textarea>
-      </div>
-      <div class="button-box">
-        <button id="commentButton">등록하기</button>
-      </div>
-    </div>
-
-    <div class="comment-content-box">
-      <ul id="comment-items">
-        <li class="comment-item">
-          <div class="comment-item-nickname">닉네임</div>
-          <div class="comment-item-content">댓글 내용</div>
-          <div class="comment-item-datetime">날짜</div>
-          <div class="comment-item-delete">
-            <button class="popup-button">삭제</button>
-            <div class="comment-delete-popup" style="display: none">
-              <div class="popup-password">
-                <label>
-                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                         maxlength="16">
-                </label>
-              </div>
-              <div class="popup-delete">
-                <button class="popupDeleteButton">확인</button>
-              </div>
-              <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="comment-item">
-          <div class="comment-item-nickname">닉네임</div>
-          <div class="comment-item-content">댓글 내용</div>
-          <div class="comment-item-datetime">날짜</div>
-          <div class="comment-item-delete">
-            <button class="popup-button">삭제</button>
-            <div class="comment-delete-popup" style="display: none">
-              <div class="popup-password">
-                <label>
-                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                         maxlength="16">
-                </label>
-              </div>
-              <div class="popup-delete">
-                <button class="popupDeleteButton">확인</button>
-              </div>
-              <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="comment-item">
-          <div class="comment-item-nickname">닉네임</div>
-          <div class="comment-item-content">댓글 내용</div>
-          <div class="comment-item-datetime">날짜</div>
-          <div class="comment-item-delete">
-            <button class="popup-button">삭제</button>
-            <div class="comment-delete-popup" style="display: none">
-              <div class="popup-password">
-                <label>
-                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                         maxlength="16">
-                </label>
-              </div>
-              <div class="popup-delete">
-                <button class="popupDeleteButton">확인</button>
-              </div>
-              <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="comment-box"> 죄송합니다
   </div>
   <script>
-<!--    장현-->
+    <!--    장현-->
     const likeButton = document.getElementById('likeButton');
     let isHeart = true;
 
@@ -332,13 +238,16 @@
       } else {
         likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
       }
-
-      isHeart = !isHeart; // 상태를 반전시킴
+      isHeart=!isHeart;
     });
+
+    function openclose(){
+      alert('댓글 창 나왔다 없앴다 하기')
+    }
   </script>
 
   <script>
-<!--    지연-->
+    <!--    지연-->
     const DEFAULT_HEIGHT = 68;
 
     function resize(obj) {
