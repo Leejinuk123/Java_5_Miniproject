@@ -1,35 +1,285 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;  <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;  <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;  <style>&ndash;&gt;-->
+<!--&lt;!&ndash;    body {&ndash;&gt;-->
+<!--&lt;!&ndash;      overflow-y: scroll;&ndash;&gt;-->
+<!--&lt;!&ndash;      font-size: 12px;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    a {&ndash;&gt;-->
+<!--&lt;!&ndash;      text-decoration: none;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .Local-tab {&ndash;&gt;-->
+<!--&lt;!&ndash;      position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;      padding: 20px 0;&ndash;&gt;-->
+<!--&lt;!&ndash;      text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .Local-tab .conTab .tab {&ndash;&gt;-->
+<!--&lt;!&ndash;      position: relative;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 800px;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin: 50px auto 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;      background: #f7f7f7;&ndash;&gt;-->
+<!--&lt;!&ndash;      border: 1px solid #dfdfdf;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .Local-tab .conTab .tab .active-tab {&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 200px;&ndash;&gt;-->
+<!--&lt;!&ndash;      background-color: gray;&ndash;&gt;-->
+<!--&lt;!&ndash;      position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;      top: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;      left: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;      line-height: 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;      color: #fff;&ndash;&gt;-->
+<!--&lt;!&ndash;      transition: .2s ease;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .Local-tab .conTab .tab>ul{&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 32px;&ndash;&gt;-->
+<!--&lt;!&ndash;      padding: 0; /* 내부 여백 제거 */&ndash;&gt;-->
+<!--&lt;!&ndash;      margin: 0; /* 외부 여백 제거 */&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .Local-tab .conTab .tab>ul>li {&ndash;&gt;-->
+<!--&lt;!&ndash;      float: left;&ndash;&gt;-->
+<!--&lt;!&ndash;      font-size: 11px;&ndash;&gt;-->
+<!--&lt;!&ndash;      font-weight: bold;&ndash;&gt;-->
+<!--&lt;!&ndash;      color: #333;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 25%;&ndash;&gt;-->
+<!--&lt;!&ndash;      text-align: center;&ndash;&gt;-->
+<!--&lt;!&ndash;      height: 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;      line-height: 30px;&ndash;&gt;-->
+<!--&lt;!&ndash;      list-style-type: none;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .Local-tab .conTab .tab>ul>li>a {&ndash;&gt;-->
+<!--&lt;!&ndash;      color: #333;&ndash;&gt;-->
+<!--&lt;!&ndash;      display: block;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .conArea {&ndash;&gt;-->
+<!--&lt;!&ndash;      position: absolute;&ndash;&gt;-->
+<!--&lt;!&ndash;      left: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;      top: 50px;&ndash;&gt;-->
+<!--&lt;!&ndash;      width: 1180px;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin-left: -580px;&ndash;&gt;-->
+<!--&lt;!&ndash;      padding: 0 0px;&ndash;&gt;-->
+<!--&lt;!&ndash;      text-align: left;&ndash;&gt;-->
+<!--&lt;!&ndash;      display: none;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .conArea.show {&ndash;&gt;-->
+<!--&lt;!&ndash;      display: block;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    .conArea.show>img {&ndash;&gt;-->
+<!--&lt;!&ndash;      display: block;&ndash;&gt;-->
+<!--&lt;!&ndash;      margin: 0 auto;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;  </style>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="Local-tab">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="conTab">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="tab">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="active-tab" id="active-tab">목포/김민규</div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;          <a href="#" class="menu" data-index="0" id="conTabSub1">목포/김민규</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="conArea show">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;          <a href="#" class="menu" data-index="1">김천/이진욱</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="conArea">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;          <a href="#" class="menu" data-index="2">부산/주장현</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="conArea">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li>&ndash;&gt;-->
+<!--&lt;!&ndash;          <a href="#" class="menu" data-index="3">대구/원지연</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="conArea">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p&ndash;&gt;-->
+<!--&lt;!&ndash;              rovident quas quos repellat suscipit veniam vitae voluptas!&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img src="https://placehold.co/300" />&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;      </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  &lt;!&ndash;<script src="js/jquery.js"></script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <script>&ndash;&gt;-->
+<!--&lt;!&ndash;    let liList = document.querySelectorAll(".menu");&ndash;&gt;-->
+
+<!--&lt;!&ndash;    liList.forEach((liItem) => {&ndash;&gt;-->
+<!--&lt;!&ndash;      liItem.addEventListener('click', (e) => {&ndash;&gt;-->
+<!--&lt;!&ndash;        let activeTabText = liItem.innerText;&ndash;&gt;-->
+<!--&lt;!&ndash;        let index = liItem.getAttribute('data-index');&ndash;&gt;-->
+<!--&lt;!&ndash;        let left = 200 * index;&ndash;&gt;-->
+<!--&lt;!&ndash;        let activeTab = document.querySelector(".active-tab");&ndash;&gt;-->
+<!--&lt;!&ndash;        activeTab.style.left = left + "px";&ndash;&gt;-->
+<!--&lt;!&ndash;        activeTab.innerText = activeTabText;&ndash;&gt;-->
+<!--&lt;!&ndash;        let show = document.querySelector(".show");&ndash;&gt;-->
+<!--&lt;!&ndash;        console.dir(show);&ndash;&gt;-->
+<!--&lt;!&ndash;        fadeOut(show);&ndash;&gt;-->
+<!--&lt;!&ndash;        show.classList.remove('show');&ndash;&gt;-->
+<!--&lt;!&ndash;        fadeIn(liItem.nextElementSibling);&ndash;&gt;-->
+<!--&lt;!&ndash;        liItem.nextElementSibling.classList.add('show');&ndash;&gt;-->
+<!--&lt;!&ndash;      }, true);&ndash;&gt;-->
+<!--&lt;!&ndash;    })&ndash;&gt;-->
+<!--&lt;!&ndash;    function fadeIn(target) {&ndash;&gt;-->
+<!--&lt;!&ndash;      var level = 0;&ndash;&gt;-->
+<!--&lt;!&ndash;      var inTimer = null;&ndash;&gt;-->
+<!--&lt;!&ndash;      inTimer = setInterval(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;        level = fadeInAction(target, level, inTimer);&ndash;&gt;-->
+<!--&lt;!&ndash;      }, 50);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    function fadeInAction(target, level, inTimer) {&ndash;&gt;-->
+<!--&lt;!&ndash;      level = level + 0.1;&ndash;&gt;-->
+<!--&lt;!&ndash;      changeOpacity(target, level);&ndash;&gt;-->
+<!--&lt;!&ndash;      if (level > 1) clearInterval(inTimer);&ndash;&gt;-->
+<!--&lt;!&ndash;      return level;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    function fadeOut(target) {&ndash;&gt;-->
+<!--&lt;!&ndash;      var level = 1;&ndash;&gt;-->
+<!--&lt;!&ndash;      var outTimer = null;&ndash;&gt;-->
+<!--&lt;!&ndash;      outTimer = setInterval(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;        level = fadeOutAction(target, level, outTimer);&ndash;&gt;-->
+<!--&lt;!&ndash;      }, 50);&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    function fadeOutAction(target, level, outTimer) {&ndash;&gt;-->
+<!--&lt;!&ndash;      level = level - 0.1;&ndash;&gt;-->
+<!--&lt;!&ndash;      changeOpacity(target, level);&ndash;&gt;-->
+<!--&lt;!&ndash;      if (level < 0) {&ndash;&gt;-->
+<!--&lt;!&ndash;        clearInterval(outTimer);&ndash;&gt;-->
+<!--&lt;!&ndash;      }&ndash;&gt;-->
+<!--&lt;!&ndash;      return level;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    function changeOpacity(target, level) {&ndash;&gt;-->
+<!--&lt;!&ndash;      var obj = target;&ndash;&gt;-->
+<!--&lt;!&ndash;      obj.style.opacity = level;&ndash;&gt;-->
+<!--&lt;!&ndash;      obj.style.MozOpacity = level;&ndash;&gt;-->
+<!--&lt;!&ndash;      obj.style.KhtmlOpacity = level;&ndash;&gt;-->
+<!--&lt;!&ndash;      obj.style.MsFilter = "'progid: DXImageTransform.Microsoft.Alpha(Opacity=" + (level * 100) + ")'";&ndash;&gt;-->
+<!--&lt;!&ndash;      obj.style.filter = "alpha(opacity=" + (level * 100) + ");";&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;  </script>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Flexbox Item Layout</title>-->
+<!--  <style>-->
+<!--    .container {-->
+<!--      display: flex;-->
+<!--      flex-wrap: wrap;-->
+<!--    }-->
+
+<!--    .item {-->
+<!--      flex: 1;-->
+<!--      height: 100px;-->
+<!--      margin: 10px;-->
+<!--      text-align: center;-->
+<!--      line-height: 100px;-->
+<!--      font-size: 20px;-->
+<!--    }-->
+
+<!--    .item.full-width {-->
+<!--      flex: 2;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--  <div class="item full-width">1</div>-->
+<!--  <div class="item">2</div>-->
+<!--  <div class="item">3</div>-->
+<!--  <div class="item">4</div>-->
+<!--  <div class="item">5</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toggle Emoji Button</title>
+  <title>Dynamic Element Addition</title>
   <style>
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background: none;
-      border: none;
+    .item {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-<button id="emojiButton">🤍</button>
+<div id="container">
+  <!-- 여기에 추가될 div 요소들 -->
+</div>
+
+<button onclick="addNewDiv()">새로운 Div 추가</button>
 
 <script>
-  const emojiButton = document.getElementById('emojiButton');
-  let isHeart = true;
+  function addNewDiv() {
+    var container = document.getElementById("container");
+    var newDiv = document.createElement("div");
+    newDiv.classList.add("item");
+    newDiv.textContent = "새로운 Div";
 
-  emojiButton.addEventListener('click', function() {
-    if (isHeart) {
-      emojiButton.textContent = '❤️'; // 다른 이모지로 변경
-    } else {
-      emojiButton.textContent = '🤍'; // 하트 이모지로 변경
-    }
-
-    isHeart = !isHeart; // 상태를 반전시킴
-  });
+    container.appendChild(newDiv);
+  }
 </script>
 </body>
 </html>

@@ -74,3 +74,78 @@ body {
     flex: 1 0 100%; /* 화면이 작아질 때 한 개의 li가 가로로 나오도록 */
   }
 }
+
+
+.main_banner {
+  background-color: gray;
+  width: 1000px;
+  margin: 0 auto;
+  height: 300px;
+}
+.main_banner > h1 {
+  font-size: 50px;
+  margin: 0;
+  padding-left: 40px;
+  padding-top: 80px;
+  height: fit-content;
+}
+.main_banner > p {
+  font-size: 30px;
+  margin: 0;
+  padding-left: 40px;
+  height: fit-content;
+}
+
+.main_content{
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  height: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1000px;
+}
+.main_content>h1{
+  flex: 1 100%;
+  text-align: center;
+  height: 40px;
+}
+.main_content .card{
+  flex: 1 0 calc(23% - 6px);
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+  height: 300px;
+  padding-bottom: 50px;
+}
+
+.card .card-img{
+  border: 1px solid black;
+  margin: 0px;
+  flex: 1 200px;
+  height: 200px;
+}
+@media screen and (max-width: 1000px) {
+
+  .main_content{
+    width: 100%;
+  }
+  .main_content>h1{
+    flex: 0 1 100%;
+    text-align: center;
+    height: 40px;
+  }
+  .main_content .card{
+    flex: 1 0 calc(48% - 5px);
+    height: 450px;
+  }
+  .card .card-img{
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main_content .card{
+    flex: 1 0 100%;
+  }
+}

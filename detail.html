@@ -3,8 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .detailtitle {
+      margin-top: 30px;
+    }
+
+    .detailbox {
+      width: 1000px;
+      margin: 0px auto;
+      border: 1px solid black;
+      padding: 0px 10px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .likebtn {
+      border: 3px solid darkgray;
+      margin-right: 10px;
+    }
+
+    .commentbtn {
+      border: 3px solid darkgray;
+    }
+
+    .detailcontent {
+      color: darkgray;
+      margin: 15px auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .detailbtn {
+      display: flex;
+      margin: 30px auto 30px 10px ;
+    }
+
+  </style>
 </head>
 <body>
+<div class="detailbox">
+  <div class="detailtitle">
+    <h1>부산 여행기</h1>
+    <hr>
+  </div>
+  <div class="detailcontent">
+    <h6>오늘은 부산에서 먹었던 것 중 가장 맛있었던 국밥 집에 다녀왔어요!
+      국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥국밥</h6>
+  </div>
+  <div>
+    <img
+      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjVfOTYg%2FMDAxNjI0NjAwNTUyMDIz.iyzCQZtH-NGxwjImotoA3vFRUlaVuAW0ZXsp3poa6zUg.xP4f5WkD428pZvJWj4RHAnyj2taTM_evuN8mxEUBLiEg.JPEG.se4206%2FIMG_9404.jpg&type=sc960_832"
+      alt="">
+  </div>
+  <div class="detailcontent">
+    <h6>그 곳은 바로 수변최고돼지국밥 민락본점이였어요!</h6>
+  </div>
+  <div>
+    <img
+      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTFfMjQw%2FMDAxNzAyMjU2NzI3MzE1.LLfQnVKTM7SSoVRXmGjezD-gpDEyV2GHifwiLRPhmHEg.Wg2SvmDIgjY_l594mcO3qRs8MovOFCPzLE4f6Z-AsTwg.JPEG.yeslord84%2F%25C8%25AD%25B8%25F1%25BC%25F8%25B4%25EB%25B1%25B9_%25BF%25A9%25C0%25C7%25B5%25B5%25B8%25C0%25C1%25FD_%25BA%25BB%25C1%25A1_%25BC%25F8%25B4%25EB%25B1%25B9%25B8%25C0%25C1%25FD_%25BE%25CB%25B0%25F6%25C3%25A2_%252837%2529.JPG&type=sc960_832">
+  </div>
+  <div class="detailbtn">
+    <div class="likebtn">
+      <button id="likeButton">🤍 좋아요</button>
+    </div>
+    <div class="commentbtn">
+      <button id="commentButton">💬 댓글</button>
+    </div>
+  </div>
+  <script>
+    const likeButton = document.getElementById('likeButton');
+    let isHeart = true;
 
+    likeButton.addEventListener('click', function () {
+      if (isHeart) {
+        likeButton.textContent = '🖤️ 좋아요'; // 다른 이모지로 변경
+      } else {
+        likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
+      }
+
+      isHeart = !isHeart; // 상태를 반전시킴
+    });
+  </script>
+</div>
 </body>
 </html>
