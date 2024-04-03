@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -109,6 +110,7 @@
       height: 32px; /* X 세로 중앙 */
       margin: 0 auto; /* 가운데 정렬 */
     }
+
     .popup-cancel .line-box {
       position: absolute;
       top: 50%;
@@ -118,6 +120,7 @@
       height: 100%;
       box-sizing: border-box;
     }
+
     .popup-cancel .line-box > span {
       position: absolute;
       top: 50%;
@@ -126,19 +129,23 @@
       height: 2px;
       background-color: #000;
     }
+
     .popup-cancel .line-01 {
       transform: rotate(135deg) translateX(0%);
     }
+
     .popup-cancel .line-02 {
       transform: rotate(45deg) translateX(0%);
     }
+
     .comment-delete-popup .popupDeletePassword {
       padding: 5px;
       width: 102px;
       height: 32px;
       box-sizing: border-box;
     }
-    .comment-delete-popup  .popupDeleteButton {
+
+    .comment-delete-popup .popupDeleteButton {
       width: 44px;
       height: 32px;
       box-sizing: border-box;
@@ -174,17 +181,18 @@
           <div class="comment-delete-popup" style="display: none">
             <div class="popup-password">
               <label>
-                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호" maxlength="16">
+                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                       maxlength="16">
               </label>
             </div>
             <div class="popup-delete">
               <button class="popupDeleteButton">확인</button>
             </div>
             <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
+              <button class="line-box popupCancelButton" aria-label="Name">
+                <span class="line-01"></span>
+                <span class="line-02"></span>
+              </button>
             </div>
           </div>
         </div>
@@ -198,17 +206,18 @@
           <div class="comment-delete-popup" style="display: none">
             <div class="popup-password">
               <label>
-                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호" maxlength="16">
+                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                       maxlength="16">
               </label>
             </div>
             <div class="popup-delete">
               <button class="popupDeleteButton">확인</button>
             </div>
             <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
+              <button class="line-box popupCancelButton" aria-label="Name">
+                <span class="line-01"></span>
+                <span class="line-02"></span>
+              </button>
             </div>
           </div>
         </div>
@@ -222,17 +231,18 @@
           <div class="comment-delete-popup" style="display: none">
             <div class="popup-password">
               <label>
-                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호" maxlength="16">
+                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                       maxlength="16">
               </label>
             </div>
             <div class="popup-delete">
               <button class="popupDeleteButton">확인</button>
             </div>
             <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
+              <button class="line-box popupCancelButton" aria-label="Name">
+                <span class="line-01"></span>
+                <span class="line-02"></span>
+              </button>
             </div>
           </div>
         </div>
@@ -252,16 +262,17 @@
     }
   }
 
+  // 삭제버튼을 눌렀을때
   $(".popup-button").on("click", function () {
     $(".comment-delete-popup").not($(this)).css("display", "none");
     $(".popupDeletePassword").val("");
     $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
   });
+  // X 눌렀을 때
   $(".popup-cancel").on("click", function () {
     $(".popupDeletePassword").val("");
     $(this).closest(".comment-delete-popup").toggle();
   });
-
 </script>
 </body>
 </html>
