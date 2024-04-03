@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>27조 미니프로젝트</title>
   <meta name="description" content="">
 
   <meta property="og:title" content="">
@@ -14,121 +13,45 @@
   <meta property="og:image" content="">
 
   <meta name="theme-color" content="#fafafa">
+
+<!--  index.css 임포트해오기-->
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .intro {
-    background-color: #999999;
-    max-width: 1000px;
-    margin: 0 auto;
-    height: fit-content;
-    padding: 20px;
-    padding-bottom: 50px;
-    box-sizing: border-box;
-  }
-
-  .intro .text {
-    height: fit-content;
-    text-align: center;
-  }
-
-  .intro .text > h1 {
-    margin: 0;
-    padding: 20px 0;
-    padding-bottom: 5px;
-    font-size: 24px;
-  }
-
-  .intro .text > hr {
-    width: 80px;
-    margin: 10px auto;
-    border-color: black;
-    border-width: 2px;
-  }
-
-  .intro ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  .intro ul > li {
-    flex: 1 0 23%; /* 4개의 li를 가로로 나누기 위해 23% */
-    margin: 10px 5px;
-    padding: 10px;
-    border: 1px solid black;
-    box-sizing: border-box;
-    height: 400px;
-  }
-
-  .intro .outro {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid black;
-    box-sizing: border-box;
-    background-color: #888888;
-    margin: 0 auto;
-    height: 250px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .intro ul > li {
-      flex: 1 0 48%; /* 화면이 작을 때 두 개의 li를 가로로 나누기 위해 48% */
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .intro .text > h1 {
-      font-size: 20px;
-    }
-
-    .intro ul > li {
-      flex: 1 0 100%; /* 화면이 작아질 때 한 개의 li가 가로로 나오도록 */
-    }
-  }
-</style>
-
 <body>
-<div id="header">
-</div>
-
-<div class="intro">
-
-  <div class="intro text">
-    <h1>지역소개</h1>
-    <hr>
+  <div id="header">
   </div>
 
-  <ul>
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in felis vel felis aliquet rutrum.</li>
-    <li>Integer nec ligula eu ex pretium tristique eget nec ligula.</li>
-    <li>Vivamus vehicula neque eu efficitur semper. Vivamus ut gravida mi.</li>
-    <li>Maecenas consequat nisl vitae ligula tincidunt, ut rhoncus urna imperdiet.</li>
-  </ul>
+  <div class="intro">
 
-  <div style="clear: both" class="outro">
-    <p>이 부분은 추가된 내용입니다.</p>
+    <div class="intro text">
+      <h1>지역소개</h1>
+      <hr>
+    </div>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in felis vel felis aliquet rutrum.</li>
+      <li>Integer nec ligula eu ex pretium tristique eget nec ligula.</li>
+      <li>Vivamus vehicula neque eu efficitur semper. Vivamus ut gravida mi.</li>
+      <li>Maecenas consequat nisl vitae ligula tincidunt, ut rhoncus urna imperdiet.</li>
+    </ul>
+
+    <div style="clear: both" class="outro">
+      <p>이 부분은 추가된 내용입니다.</p>
+    </div>
   </div>
-</div>
 
-<script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('헤더 가져오기 실패:', error);
-    });
-  //header.html 가져와서 붙이기.
-</script>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('헤더 가져오기 실패:', error);
+      });
+    //header.html 가져와서 붙이기.
+  </script>
+
 </body>
-
 </html>
