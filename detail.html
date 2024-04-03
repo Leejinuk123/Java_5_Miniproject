@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -225,7 +227,7 @@
       <button onclick="openclose()" id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
     </div>
   </div>
-  <div class="comment-box"> 죄송합니다
+  <div class="comment-box" style="display: none"> 짜잔
   </div>
   <script>
     <!--    장현-->
@@ -238,12 +240,26 @@
       } else {
         likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
       }
-      isHeart=!isHeart;
+      isHeart = !isHeart;
     });
 
-    function openclose(){
-      alert('댓글 창 나왔다 없앴다 하기')
+    const commentVisibleBtn = document.getElementById('commentVisibleBtn');
+    let isArrow = true;
+
+    commentVisibleBtn.addEventListener('click', function () {
+      if (isArrow) {
+        commentVisibleBtn.textContent = '💬 댓글 ︱ ▲'; // 다른 이모지로 변경
+      } else {
+        commentVisibleBtn.textContent = '💬 댓글 ︱ ▼'; // 하트 이모지로 변경
+      }
+      isArrow = !isArrow;
+    });
+    function openclose() {
+      $('.comment-box').toggle();
     }
+    // $("#commentVisibleBtn").on("click", function () {
+    //   $(".comment-box").toggle();
+    // });
   </script>
 
   <script>
