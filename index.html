@@ -14,13 +14,13 @@
   <meta property="og:image" content="">
 
   <meta name="theme-color" content="#fafafa">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      // AJAX로 header.html을 가져와서 #header 부분에 삽입
-      $("#header").load("header.html");
-    });
-  </script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--  <script>-->
+<!--    $(document).ready(function(){-->
+<!--      // AJAX로 header.html을 가져와서 #header 부분에 삽입-->
+<!--      $("#header").load("header.html");-->
+<!--    });-->
+<!--  </script>-->
 </head>
 <style>
   body{
@@ -69,12 +69,6 @@
     vertical-align: top; /* 요소들을 상단 정렬 */
   }
 
-  /*@media screen and (min-width: 1000px) { !*화면이 커질 때*!*/
-  /*  .intro {*/
-  /*    width: 100%; !* 화면이 작을 때 한 줄에 하나의 아이템만 보이도록 조정 *!*/
-  /*  }*/
-  /*}*/
-
   @media screen and (max-width: 1030px) { /*화면이 작아질 때*/
     .intro ul > li {
       width: calc(48%); /* 화면이 작을 때 두 개의 li를 가로로 나누기 위해 48%*/
@@ -112,22 +106,16 @@
     </div>
   </div>
 
-
   <script>
-    document.getElementById("mainLogo").addEventListener("click", function() {
-      // 다른 HTML 파일로 이동
-      window.location.href = "index.html";
-    });
-
-    <!-- Fetch API를 사용하여 header.html 가져오기 -->
-    // fetch('header.html')
-    //   .then(response => response.text())
-    //   .then(data => {
-    //     document.getElementById('header').innerHTML = data;
-    //   })
-    //   .catch(error => {
-    //     console.error('헤더 가져오기 실패:', error);
-    //   });
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('헤더 가져오기 실패:', error);
+      });
+    //header.html 가져와서 붙이기.
   </script>
 </body>
 
