@@ -10,20 +10,37 @@
       padding: 0;
     }
 
-    .detailtitle {
-      margin : 30px auto 15px auto;
+    .all-content{
+      width: 1800px;
+      margin: 30px auto;
+      border: 1px double black;
+      border-radius: 15px;
     }
 
-    .detailbox {
-      width: 1000px;
-      margin: 0px auto;
-      border: 1px solid black;
-      padding: 0px 10px;
-
+    .detail-content .post-title{
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 20px;
+    }
+    .detail-content .post-content {
+      width: 1500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin:auto;
+      gap: 30px;
+    }
+    .detail-content .post-content img {
+      width: 500px;
+    }
+    .detail-content .post-content p {
+      width: 500px;
+    }
+
+    .detailbtn {
+      display: flex;
+      margin: 30px auto 30px 50px;
     }
 
     .likebtn {
@@ -35,22 +52,12 @@
       border: 3px solid darkgray;
     }
 
-    .detailcontent {
-      color: darkgray;
-      margin: 30px auto;
-    }
-
     button {
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
       background: none;
       border: none;
-    }
-
-    .detailbtn {
-      display: flex;
-      margin: 30px auto 30px 10px;
     }
 
     .comment-box {
@@ -113,7 +120,7 @@
       gap: 20px;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid black;
+      border-bottom: 1px groove black;
     }
 
     .comment-content-box .comment-item-nickname {
@@ -192,119 +199,102 @@
       height: 32px;
       box-sizing: border-box;
     }
-
-    .smalltitle {
-      margin-top: 30px;
-      color: lightslategray;
-    }
   </style>
 </head>
 <body>
-<div class="detailbox">
-  <div class="smalltitle">
-    <h6> 부산 사는 쭈장이네</h6>
-
+<div class = "all-content">
+<div class="detail-content">
+  <div class="post-title">
+    <p style="font-size: 25px; color: darkgray ; padding-top: 15px"> 부산 사는 주짱이네</p>
+    <p style="font-size: 40px; font-weight: bolder">부산 해운대 맛집 소개</p>
+    <p style="color:dimgray">▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔</p>
   </div>
-  <div class="detailtitle">
-    <h1>부산 해운대 맛집</h1>
-  </div>
-  ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-  <div class="detailcontent">
-    <p>오늘은 부산에서 먹었던 것 중 가장 맛있었던 국밥 집에 다녀왔어요!</p>
-  </div>
-  <div>
+  <div class="post-content">
+    <p style="font-size: 25px; width: 1300px; text-align: center; ">오늘은 부산에서 먹었던 것 중 가장 맛있었던 국밥 집에 다녀왔어요!</p>
     <img
       src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjVfOTYg%2FMDAxNjI0NjAwNTUyMDIz.iyzCQZtH-NGxwjImotoA3vFRUlaVuAW0ZXsp3poa6zUg.xP4f5WkD428pZvJWj4RHAnyj2taTM_evuN8mxEUBLiEg.JPEG.se4206%2FIMG_9404.jpg&type=sc960_832"
       alt="">
-  </div>
-  <div class="detailcontent">
-    <p>그 곳은 바로 수변최고돼지국밥 민락본점이였어요!</p>
-  </div>
-  <div>
+    <p style="font-size: 25px; width: 1300px; text-align: center; ">그곳은 바로 송정 3미 국밥집!</p>
     <img
       src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTFfMjQw%2FMDAxNzAyMjU2NzI3MzE1.LLfQnVKTM7SSoVRXmGjezD-gpDEyV2GHifwiLRPhmHEg.Wg2SvmDIgjY_l594mcO3qRs8MovOFCPzLE4f6Z-AsTwg.JPEG.yeslord84%2F%25C8%25AD%25B8%25F1%25BC%25F8%25B4%25EB%25B1%25B9_%25BF%25A9%25C0%25C7%25B5%25B5%25B8%25C0%25C1%25FD_%25BA%25BB%25C1%25A1_%25BC%25F8%25B4%25EB%25B1%25B9%25B8%25C0%25C1%25FD_%25BE%25CB%25B0%25F6%25C3%25A2_%252837%2529.JPG&type=sc960_832">
-  </div>
-  <div class="detailcontent">
-    <p>아침인데도 줄이 엄청 서있어요!</p>
-  </div>
-  <div>
+    <p style="font-size: 25px; width: 1300px; text-align: center; ">아침부터 웨이팅이 있었어요!</p>
     <img
       src="https://img.siksinhot.com/place/1537322731136078.jpg?c=Y">
+    <p style="font-size: 25px; width: 1300px; text-align: center; ">반찬은 다른 국밥집들과 비슷했어요!</p>
   </div>
-  <div class="detailcontent">
-    <p>국밥 하나랑 반찬은 일반 국밥집처럼 나와요!</p>
-  </div>
-
-
-
-  <div class="detailbtn">
-    <div class="likebtn">
-      <button id="likeButton">🤍 좋아요</button>
-    </div>
-    <div class="commentbtn">
-      <button onclick="openclose()" id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
-    </div>
-  </div>
-  <div class="comment-box" style="display: none"> 짜잔
-  </div>
-  <script>
-    <!--    장현-->
-    const likeButton = document.getElementById('likeButton');
-    let isHeart = true;
-
-    likeButton.addEventListener('click', function () {
-      if (isHeart) {
-        likeButton.textContent = '🖤️ 좋아요'; // 다른 이모지로 변경
-      } else {
-        likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
-      }
-      isHeart = !isHeart;
-    });
-
-    const commentVisibleBtn = document.getElementById('commentVisibleBtn');
-    let isArrow = true;
-
-    commentVisibleBtn.addEventListener('click', function () {
-      if (isArrow) {
-        commentVisibleBtn.textContent = '💬 댓글 ︱ ▲'; // 다른 이모지로 변경
-      } else {
-        commentVisibleBtn.textContent = '💬 댓글 ︱ ▼'; // 하트 이모지로 변경
-      }
-      isArrow = !isArrow;
-    });
-    function openclose() {
-      $('.comment-box').toggle();
-    }
-    // $("#commentVisibleBtn").on("click", function () {
-    //   $(".comment-box").toggle();
-    // });
-  </script>
-
-  <script>
-    <!--    지연-->
-    const DEFAULT_HEIGHT = 68;
-
-    function resize(obj) {
-      obj.style.height = '0';
-      if (obj.scrollHeight < DEFAULT_HEIGHT) {
-        obj.style.height = -4 + obj.scrollHeight + 'px';
-      } else {
-        obj.style.height = obj.scrollHeight + 'px';
-      }
-    }
-
-    // 삭제버튼을 눌렀을때
-    $(".popup-button").on("click", function () {
-      $(".comment-delete-popup").not($(this)).css("display", "none");
-      $(".popupDeletePassword").val("");
-      $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
-    });
-    // X 눌렀을 때
-    $(".popup-cancel").on("click", function () {
-      $(".popupDeletePassword").val("");
-      $(this).closest(".comment-delete-popup").toggle();
-    });
-  </script>
 </div>
+
+
+<div class="detailbtn">
+  <div class="likebtn">
+    <button id="likeButton">🤍 좋아요</button>
+  </div>
+  <div class="commentbtn">
+    <button onclick="openclose()" id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
+  </div>
+</div>
+<div class="comment-box" style="display: none"> 짜잔
+</div>
+</div>
+<script>
+  <!--    장현-->
+  const likeButton = document.getElementById('likeButton');
+  let isHeart = true;
+
+  likeButton.addEventListener('click', function () {
+    if (isHeart) {
+      likeButton.textContent = '🖤️ 좋아요'; // 다른 이모지로 변경
+    } else {
+      likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
+    }
+    isHeart = !isHeart;
+  });
+
+  const commentVisibleBtn = document.getElementById('commentVisibleBtn');
+  let isArrow = true;
+
+  commentVisibleBtn.addEventListener('click', function () {
+    if (isArrow) {
+      commentVisibleBtn.textContent = '💬 댓글 ︱ ▲'; // 다른 이모지로 변경
+    } else {
+      commentVisibleBtn.textContent = '💬 댓글 ︱ ▼'; // 하트 이모지로 변경
+    }
+    isArrow = !isArrow;
+  });
+
+  function openclose() {
+    $('.comment-box').toggle();
+  }
+
+  // $("#commentVisibleBtn").on("click", function () {
+  //   $(".comment-box").toggle();
+  // });
+</script>
+
+<script>
+  <!--    지연-->
+  const DEFAULT_HEIGHT = 68;
+
+  function resize(obj) {
+    obj.style.height = '0';
+    if (obj.scrollHeight < DEFAULT_HEIGHT) {
+      obj.style.height = -4 + obj.scrollHeight + 'px';
+    } else {
+      obj.style.height = obj.scrollHeight + 'px';
+    }
+  }
+
+  // 삭제버튼을 눌렀을때
+  $(".popup-button").on("click", function () {
+    $(".comment-delete-popup").not($(this)).css("display", "none");
+    $(".popupDeletePassword").val("");
+    $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
+  });
+  // X 눌렀을 때
+  $(".popup-cancel").on("click", function () {
+    $(".popupDeletePassword").val("");
+    $(this).closest(".comment-delete-popup").toggle();
+  });
+</script>
 </body>
 </html>
