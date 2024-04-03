@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Emoji Button</title>
+  <style>
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+<button id="emojiButton">🤍</button>
+
+<script>
+  const emojiButton = document.getElementById('emojiButton');
+  let isHeart = true;
+
+  emojiButton.addEventListener('click', function() {
+    if (isHeart) {
+      emojiButton.textContent = '❤️'; // 다른 이모지로 변경
+    } else {
+      emojiButton.textContent = '🤍'; // 하트 이모지로 변경
+    }
+
+    isHeart = !isHeart; // 상태를 반전시킴
+  });
+</script>
+</body>
+</html>

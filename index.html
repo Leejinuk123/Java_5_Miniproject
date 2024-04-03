@@ -14,44 +14,98 @@
 
   <meta name="theme-color" content="#fafafa">
 
-<!--  index.css 임포트해오기-->
+  <!--  index.css 임포트해오기-->
   <link rel="stylesheet" href="css/index.css">
 </head>
-
+<style>
+  .main {
+    background-color: gray;
+    margin: 10px;
+    padding: 5px;
+    width: 1500px;
+    height: 300px;
+    font-size: 30px;
+  }
+</style>
 <body>
-  <div id="header">
+<div id="header">
+</div>
+
+<!--  민규님 코드-->
+<div class="main">
+  <h1 class="display-5 fw-bold">27조</h1>
+  <p class="col-md-8 fs-4">홈페이지 설명</p>
+</div>
+<hr>
+<h1>27조 조원소개</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">김민규</h5>
+        <p class="card-text">자기 소개</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">이진욱</h5>
+        <p class="card-text">자기소개</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">주장현</h5>
+      <p class="card-text">자기소개</p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">원지연</h5>
+        <p class="card-text">자기소개</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--민규님 코드-->
+
+<div class="intro">
+
+  <div class="intro text">
+    <h1>지역소개</h1>
+    <hr>
   </div>
 
-  <div class="intro">
+  <ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in felis vel felis aliquet rutrum.</li>
+    <li>Integer nec ligula eu ex pretium tristique eget nec ligula.</li>
+    <li>Vivamus vehicula neque eu efficitur semper. Vivamus ut gravida mi.</li>
+    <li>Maecenas consequat nisl vitae ligula tincidunt, ut rhoncus urna imperdiet.</li>
+  </ul>
 
-    <div class="intro text">
-      <h1>지역소개</h1>
-      <hr>
-    </div>
-
-    <ul>
-      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in felis vel felis aliquet rutrum.</li>
-      <li>Integer nec ligula eu ex pretium tristique eget nec ligula.</li>
-      <li>Vivamus vehicula neque eu efficitur semper. Vivamus ut gravida mi.</li>
-      <li>Maecenas consequat nisl vitae ligula tincidunt, ut rhoncus urna imperdiet.</li>
-    </ul>
-
-    <div style="clear: both" class="outro">
-      <p>이 부분은 추가된 내용입니다.</p>
-    </div>
+  <div style="clear: both" class="outro">
+    <p>이 부분은 추가된 내용입니다.</p>
   </div>
+</div>
 
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      })
-      .catch(error => {
-        console.error('헤더 가져오기 실패:', error);
-      });
-    //header.html 가져와서 붙이기.
-  </script>
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('헤더 가져오기 실패:', error);
+    });
+  //header.html 가져와서 붙이기.
+</script>
 
 </body>
 </html>
