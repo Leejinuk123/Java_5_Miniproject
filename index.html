@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
 
 <head>
@@ -14,109 +14,121 @@
   <meta property="og:image" content="">
 
   <meta name="theme-color" content="#fafafa">
-<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-<!--  <script>-->
-<!--    $(document).ready(function(){-->
-<!--      // AJAX로 header.html을 가져와서 #header 부분에 삽입-->
-<!--      $("#header").load("header.html");-->
-<!--    });-->
-<!--  </script>-->
 </head>
+
 <style>
-  body{
+  body {
     margin: 0;
-  }
-  .intro{
-    background-color: #999999;
-    width: 1000px;
-    height: fit-content;
-    padding-bottom: 50px;
-    margin: 0 auto;
+    font-family: Arial, sans-serif;
   }
 
-  .intro .text{
-    height: fit-content;
-  }
-  .intro .text>h1{
-    text-align: center;
-    padding: 20px;
-    padding-bottom: 5px;
-    margin: 0px;
-  }
-  .intro .text>hr{
+  .intro {
+    background-color: #999999;
+    max-width: 1000px;
     margin: 0 auto;
-    width: 150px;
-    border-color : black;
-    border-width: 4px;
+    height: fit-content;
+    padding: 20px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+  }
+
+  .intro .text {
+    height: fit-content;
+    text-align: center;
+  }
+
+  .intro .text > h1 {
+    margin: 0;
+    padding: 20px 0;
+    padding-bottom: 5px;
+    font-size: 24px;
+  }
+
+  .intro .text > hr {
+    width: 80px;
+    margin: 10px auto;
+    border-color: black;
+    border-width: 2px;
   }
 
   .intro ul {
-    border: 1px solid black;
-    list-style-type: none;
-    width: 900px;
-    height: fit-content;
-    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0;
-    text-align: center; /* 가로로 가운데 정렬 */
+    list-style-type: none;
   }
 
   .intro ul > li {
-    display: inline-block;
-    width: calc(23%); /* 4개의 li를 가로로 나누기 위해 23%, 마진 고려하여 조정 */
-    border: 1px solid white;
-    margin: 5px;
+    flex: 1 0 23%; /* 4개의 li를 가로로 나누기 위해 23% */
+    margin: 10px 5px;
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
     height: 400px;
-    vertical-align: top; /* 요소들을 상단 정렬 */
-  }
-
-  @media screen and (max-width: 1030px) { /*화면이 작아질 때*/
-    .intro ul > li {
-      width: calc(48%); /* 화면이 작을 때 두 개의 li를 가로로 나누기 위해 48%*/
-    }
   }
 
   .intro .outro {
+    margin-top: 20px;
+    padding: 20px;
     border: 1px solid black;
-    width: 950px;
-    height: 250px;
-    margin: 0 auto;
+    box-sizing: border-box;
     background-color: #888888;
+    margin: 0 auto;
+    height: 250px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .intro ul > li {
+      flex: 1 0 48%; /* 화면이 작을 때 두 개의 li를 가로로 나누기 위해 48% */
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .intro .text > h1 {
+      font-size: 20px;
+    }
+
+    .intro ul > li {
+      flex: 1 0 100%; /* 화면이 작아질 때 한 개의 li가 가로로 나오도록 */
+    }
   }
 </style>
+
 <body>
-  <div id="header">
+<div id="header">
+</div>
+
+<div class="intro">
+
+  <div class="intro text">
+    <h1>지역소개</h1>
+    <hr>
   </div>
 
-  <div class="intro">
+  <ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in felis vel felis aliquet rutrum.</li>
+    <li>Integer nec ligula eu ex pretium tristique eget nec ligula.</li>
+    <li>Vivamus vehicula neque eu efficitur semper. Vivamus ut gravida mi.</li>
+    <li>Maecenas consequat nisl vitae ligula tincidunt, ut rhoncus urna imperdiet.</li>
+  </ul>
 
-    <div class="intro text">
-      <h1>지역소개</h1>
-      <hr>
-    </div>
-
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-
-    <div style="clear: both" class="outro">
-
-    </div>
+  <div style="clear: both" class="outro">
+    <p>이 부분은 추가된 내용입니다.</p>
   </div>
+</div>
 
-  <script>
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      })
-      .catch(error => {
-        console.error('헤더 가져오기 실패:', error);
-      });
-    //header.html 가져와서 붙이기.
-  </script>
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('헤더 가져오기 실패:', error);
+    });
+  //header.html 가져와서 붙이기.
+</script>
 </body>
 
 </html>
