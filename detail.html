@@ -5,6 +5,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     .detailtitle {
       margin-top: 30px;
     }
@@ -47,6 +52,146 @@
       margin: 30px auto 30px 10px ;
     }
 
+    .comment-box {
+      width: 1000px;
+      margin: 0 auto;
+      background: #dcdcdc;
+      padding: 12px;
+    }
+
+    .comment-input-box {
+      margin-bottom: 20px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .comment-input-box .user-info {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    .comment-input-box .user-info #commentNickname, #commentPassword {
+      width: 128px;
+      padding: 5px;
+    }
+
+    .comment-input-box .user-info #commentNickname {
+      margin-bottom: 10px;
+    }
+
+    .comment-input-box .button-box #commentButton {
+      padding: 5px;
+    }
+
+    .input-box {
+      flex-grow: 1;
+    }
+
+    .input-box #commentInput {
+      padding: 5px;
+      width: 100%;
+      min-height: 68px;
+      overflow-y: hidden;
+      resize: none;
+      box-sizing: border-box;
+    }
+
+    .comment-content-box {
+    }
+
+    .comment-content-box #comment-items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comment-content-box .comment-item {
+      padding: 10px;
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid black;
+    }
+
+    .comment-content-box .comment-item-nickname {
+      width: 132px;
+    }
+
+    .comment-content-box .comment-item-content {
+      flex-grow: 1;
+    }
+
+    .comment-content-box .comment-item-datetime {
+    }
+
+    .comment-content-box .comment-item-delete {
+      position: relative;
+    }
+
+    .comment-content-box .comment-item-delete button {
+      padding: 5px;
+    }
+
+    .comment-delete-popup {
+      padding: 5px;
+      background: #ffaeae;
+      display: flex;
+      position: absolute;
+      align-items: center;
+      left: -48px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .popup-cancel {
+      position: relative;
+      width: 32px; /* X 사이즈 */
+      height: 32px; /* X 세로 중앙 */
+      margin: 0 auto; /* 가운데 정렬 */
+    }
+
+    .popup-cancel .line-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .popup-cancel .line-box > span {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      width: 60%;
+      height: 2px;
+      background-color: #000;
+    }
+
+    .popup-cancel .line-01 {
+      transform: rotate(135deg) translateX(0%);
+    }
+
+    .popup-cancel .line-02 {
+      transform: rotate(45deg) translateX(0%);
+    }
+
+    .comment-delete-popup .popupDeletePassword {
+      padding: 5px;
+      width: 102px;
+      height: 32px;
+      box-sizing: border-box;
+    }
+
+    .comment-delete-popup .popupDeleteButton {
+      width: 44px;
+      height: 32px;
+      box-sizing: border-box;
+    }
+
   </style>
 </head>
 <body>
@@ -76,10 +221,108 @@
       <button id="likeButton">🤍 좋아요</button>
     </div>
     <div class="commentbtn">
-      <button id="commentButton">💬 댓글</button>
+      <button id="commentVisibleBtn">💬 댓글</button>
+    </div>
+  </div>
+  <div class="comment-box">
+    <div class="comment-input-box">
+      <div class="user-info">
+        <label for="commentNickname"></label>
+        <input type="text" id="commentNickname" placeholder="닉네임(8자리)" maxlength="8">
+        <label for="commentPassword"></label>
+        <input type="password" id="commentPassword" placeholder="비밀번호" maxlength="16">
+      </div>
+      <div class="input-box">
+        <label for="commentInput"></label>
+        <textarea id="commentInput" placeholder="내용 입력" oninput="resize(this)"></textarea>
+      </div>
+      <div class="button-box">
+        <button id="commentButton">등록하기</button>
+      </div>
+    </div>
+
+    <div class="comment-content-box">
+      <ul id="comment-items">
+        <li class="comment-item">
+          <div class="comment-item-nickname">닉네임</div>
+          <div class="comment-item-content">댓글 내용</div>
+          <div class="comment-item-datetime">날짜</div>
+          <div class="comment-item-delete">
+            <button class="popup-button">삭제</button>
+            <div class="comment-delete-popup" style="display: none">
+              <div class="popup-password">
+                <label>
+                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                         maxlength="16">
+                </label>
+              </div>
+              <div class="popup-delete">
+                <button class="popupDeleteButton">확인</button>
+              </div>
+              <div class="popup-cancel">
+                <button class="line-box popupCancelButton" aria-label="Name">
+                  <span class="line-01"></span>
+                  <span class="line-02"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item-nickname">닉네임</div>
+          <div class="comment-item-content">댓글 내용</div>
+          <div class="comment-item-datetime">날짜</div>
+          <div class="comment-item-delete">
+            <button class="popup-button">삭제</button>
+            <div class="comment-delete-popup" style="display: none">
+              <div class="popup-password">
+                <label>
+                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                         maxlength="16">
+                </label>
+              </div>
+              <div class="popup-delete">
+                <button class="popupDeleteButton">확인</button>
+              </div>
+              <div class="popup-cancel">
+                <button class="line-box popupCancelButton" aria-label="Name">
+                  <span class="line-01"></span>
+                  <span class="line-02"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item-nickname">닉네임</div>
+          <div class="comment-item-content">댓글 내용</div>
+          <div class="comment-item-datetime">날짜</div>
+          <div class="comment-item-delete">
+            <button class="popup-button">삭제</button>
+            <div class="comment-delete-popup" style="display: none">
+              <div class="popup-password">
+                <label>
+                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                         maxlength="16">
+                </label>
+              </div>
+              <div class="popup-delete">
+                <button class="popupDeleteButton">확인</button>
+              </div>
+              <div class="popup-cancel">
+                <button class="line-box popupCancelButton" aria-label="Name">
+                  <span class="line-01"></span>
+                  <span class="line-02"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <script>
+<!--    장현-->
     const likeButton = document.getElementById('likeButton');
     let isHeart = true;
 
@@ -92,7 +335,32 @@
 
       isHeart = !isHeart; // 상태를 반전시킴
     });
+  </script>
 
+  <script>
+<!--    지연-->
+    const DEFAULT_HEIGHT = 68;
+
+    function resize(obj) {
+      obj.style.height = '0';
+      if (obj.scrollHeight < DEFAULT_HEIGHT) {
+        obj.style.height = -4 + obj.scrollHeight + 'px';
+      } else {
+        obj.style.height = obj.scrollHeight + 'px';
+      }
+    }
+
+    // 삭제버튼을 눌렀을때
+    $(".popup-button").on("click", function () {
+      $(".comment-delete-popup").not($(this)).css("display", "none");
+      $(".popupDeletePassword").val("");
+      $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
+    });
+    // X 눌렀을 때
+    $(".popup-cancel").on("click", function () {
+      $(".popupDeletePassword").val("");
+      $(this).closest(".comment-delete-popup").toggle();
+    });
   </script>
 </div>
 </body>
