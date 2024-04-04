@@ -55,6 +55,7 @@ body {
   width: 200px;
   height: 200px;
   border: 1px solid black;
+  transition: all 0.1s;
 }
 
 /*반응형 설계*/

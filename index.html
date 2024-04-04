@@ -109,7 +109,7 @@
     <p>이 부분은 추가된 내용입니다.</p>
   </div>
 </div>
-
+</body>
 <script>
   fetch('header.html')
     .then(response => response.text())
@@ -133,12 +133,28 @@
   })
 
   let li = document.querySelectorAll("li");
-  console.log(li);
   observer.observe(li[0]);
   observer.observe(li[1]);
   observer.observe(li[2]);
   observer.observe(li[3]);
 
+  let card_img = document.querySelectorAll('.card-img');
+  card_img.forEach((img)=>{
+    img.addEventListener('mousemove',function(e){
+      var x = e.offsetX;
+      var y = e.offsetY;
+      var rotateY = 1/-5 * x + 20;
+      var rotateX = 4/30 * y - 20;
+
+      img.style = `transform :
+      perspective(350px)
+      rotateY(${rotateY}deg)
+      rotateX(${rotateX}deg)`;
+    })
+    img.addEventListener('mouseleave', function() {
+      img.style.transform = ''; // Reset transform to default (no rotation)
+    });
+
+  })
 </script>
-</body>
 </html>
