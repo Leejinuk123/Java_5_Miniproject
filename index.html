@@ -11,7 +11,6 @@
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
-
   <meta name="theme-color" content="#fafafa">
 
   <!--  index.css 임포트해오기-->
@@ -20,6 +19,7 @@
 
 <body>
 
+<script src="js/header.js"></script>
 <div id="header"><!-- Header 내용 --></div>
 
 <!-- 민규님 코드 -->
@@ -29,54 +29,29 @@
 </div>
 
 <div class="main_content">
-
   <h1>27조 조원소개</h1>
-
   <div class="card">
-    <div class="card-img">
-      <img src="https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg" alt="..." width="200px" height="200px">
-    </div>
-    <div>
-      <h5>김민규</h5>
-      <p>자기 소개</p>
-    </div>
+    <!--    <div class="card-img">-->
+    <!--      <img src="https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg" alt="..." width="200px" height="200px">-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--      <h5>김민규</h5>-->
+    <!--      <p>자기 소개</p>-->
+    <!--    </div>-->
   </div>
-
   <div class="card">
-    <div class="card-img">
-      <img src="https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg" alt="..." width="200px" height="200px">
-    </div>
-    <div>
-      <h5>이진욱</h5>
-      <p>자기 소개</p>
-    </div>
+    <!--    이진욱-->
   </div>
-
   <div class="card">
-    <div class="card-img">
-      <img src="https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg" alt="..." width="200px" height="200px">
-    </div>
-    <div>
-      <h5>주장현</h5>
-      <p>자기 소개</p>
-    </div>
+    <!--    주장현-->
   </div>
-
   <div class="card">
-    <div class="card-img">
-      <img src="https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg" alt="..." width="200px" height="200px">
-    </div>
-    <div>
-      <h5>원지연</h5>
-      <p>자기 소개</p>
-    </div>
+    <!--    원지연-->
   </div>
-
 </div>
 <!--민규님 코드-->
 
 <div class="intro">
-
   <div class="text">
     <h1>지역소개</h1>
     <hr>
@@ -110,51 +85,8 @@
   </div>
 </div>
 </body>
-<script>
-  fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('헤더 가져오기 실패:', error);
-    });
-  //header.html 가져와서 붙이기.
-</script>
-<script>
-  let observer = new IntersectionObserver((e)=>{
-    e.forEach((card)=>{
-      if(card.isIntersecting){
-        card.target.style.opacity = 1;
-      } else {
-        card.target.style.opacity = 0;
-      }
-    })
-  })
-
-  let li = document.querySelectorAll("li");
-  observer.observe(li[0]);
-  observer.observe(li[1]);
-  observer.observe(li[2]);
-  observer.observe(li[3]);
-
-  let card_img = document.querySelectorAll('.card-img');
-  card_img.forEach((img)=>{
-    img.addEventListener('mousemove',function(e){
-      var x = e.offsetX;
-      var y = e.offsetY;
-      var rotateY = 1/-5 * x + 20;
-      var rotateX = 4/30 * y - 20;
-
-      img.style = `transform :
-      perspective(350px)
-      rotateY(${rotateY}deg)
-      rotateX(${rotateX}deg)`;
-    })
-    img.addEventListener('mouseleave', function() {
-      img.style.transform = ''; // Reset transform to default (no rotation)
-    });
-
-  })
-</script>
+<!--반복되는 div 붙여넣기-->
+<script src="js/divRepeat.js"></script>
+<!--div에 애니메이션 주기-->
+<script src="js/animation.js"></script>
 </html>

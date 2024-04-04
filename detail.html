@@ -4,26 +4,91 @@
   <meta charset="UTF-8">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<!--  <script type="module">-->
+<!--    // Firebase SDK 라이브러리 가져오기-->
+<!--    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";-->
+<!--    import {getFirestore} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";-->
+<!--    import {collection, addDoc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";-->
+<!--    import {getDocs} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";-->
+
+
+<!--    const firebaseConfig = {-->
+<!--      apiKey: "AIzaSyA0uKRVhtA_nWErGz239LyUEbzImyz1zK8",-->
+<!--      authDomain: "sparta-5c4c5.firebaseapp.com",-->
+<!--      projectId: "sparta-5c4c5",-->
+<!--      storageBucket: "sparta-5c4c5.appspot.com",-->
+<!--      messagingSenderId: "670267606385",-->
+<!--      appId: "1:670267606385:web:ccd38ce10b5feb6a7ca2d0"-->
+<!--    };-->
+
+<!--    // Firebase 인스턴스 초기화-->
+<!--    const app = initializeApp(firebaseConfig);-->
+<!--    const db = getFirestore(app);-->
+
+<!--    // $("#commentButton").click(async function () {-->
+<!--    //   let doc = {};-->
+<!--    //   await addDoc(collection(db, "콜렉션이름"), doc);-->
+<!--    // });-->
+
+<!--    /*-->
+<!--    <div class="user-info">-->
+<!--        <label for="commentNickname"></label>-->
+<!--        <input type="text" id="commentNickname" placeholder="닉네임(8자리)" maxlength="8">-->
+<!--        <label for="commentPassword"></label>-->
+<!--        <input type="password" id="commentPassword" placeholder="비밀번호" maxlength="16">-->
+<!--      </div>-->
+<!--      <div class="input-box">-->
+<!--        &lt;!&ndash;        <label for="commentInput" style="display: none"></label>&ndash;&gt;-->
+<!--        <textarea id="commentInput" placeholder="내용 입력" oninput="resize(this)"></textarea>-->
+<!--      </div>-->
+<!--      <div class="button-box">-->
+<!--        <button id="commentButton">등록하기</button>-->
+<!--      </div>-->
+<!--    */-->
+<!--  </script>-->
+
+
   <style>
     * {
       margin: 0;
       padding: 0;
     }
 
-    .detailtitle {
-      margin : 30px auto 15px auto;
+    .all-content {
+      width: 1000px;
+      margin: 30px auto;
+      border: 1px double black;
+      border-radius: 15px;
     }
 
-    .detailbox {
-      width: 1000px;
-      margin: 0px auto;
-      border: 1px solid black;
-      padding: 0px 10px;
-
+    .detail-content .post-title {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      gap: 20px;
+    }
+
+    .detail-content .post-content {
+      width: 1000px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      gap: 30px;
+    }
+
+    .detail-content .post-content img {
+      width: 500px;
+    }
+
+    .detail-content .post-content p {
+      width: 500px;
+    }
+
+    .detailbtn {
+      display: flex;
+      margin: 30px auto 30px 50px;
     }
 
     .likebtn {
@@ -35,12 +100,7 @@
       border: 3px solid darkgray;
     }
 
-    .detailcontent {
-      color: darkgray;
-      margin: 30px auto;
-    }
-
-    button {
+    #likeButton, #commentVisibleBtn {
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -48,23 +108,17 @@
       border: none;
     }
 
-    .detailbtn {
-      display: flex;
-      margin: 30px auto 30px 10px;
-    }
-
     .comment-box {
-      width: 1000px;
+      width: 96%;
       margin: 0 auto;
       background: #dcdcdc;
       padding: 12px;
+      box-sizing: border-box;
     }
 
     .comment-input-box {
       margin-bottom: 20px;
-      padding: 10px;
       display: flex;
-      align-items: center;
       gap: 20px;
     }
 
@@ -113,7 +167,7 @@
       gap: 20px;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid black;
+      border-bottom: 1px groove black;
     }
 
     .comment-content-box .comment-item-nickname {
@@ -192,49 +246,30 @@
       height: 32px;
       box-sizing: border-box;
     }
-
-    .smalltitle {
-      margin-top: 30px;
-      color: lightslategray;
-    }
   </style>
 </head>
 <body>
-<div class="detailbox">
-  <div class="smalltitle">
-    <h6> 부산 사는 쭈장이네</h6>
-
+<div class="all-content">
+  <div class="detail-content">
+    <div class="post-title">
+      <p style="font-size: 15px; color: darkgray ; padding-top: 15px"> 부산 사는 주짱이네</p>
+      <p style="font-size: 30px; font-weight: bolder">부산 해운대 맛집 소개</p>
+      <p style="color:dimgray">▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔</p>
+    </div>
+    <div class="post-content">
+      <p style="font-size: 15px; width: 900px; text-align: center; ">오늘은 부산에서 먹었던 것 중 가장 맛있었던 국밥 집에 다녀왔어요!</p>
+      <img
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjVfOTYg%2FMDAxNjI0NjAwNTUyMDIz.iyzCQZtH-NGxwjImotoA3vFRUlaVuAW0ZXsp3poa6zUg.xP4f5WkD428pZvJWj4RHAnyj2taTM_evuN8mxEUBLiEg.JPEG.se4206%2FIMG_9404.jpg&type=sc960_832"
+        alt="">
+      <p style="font-size: 15px; width: 900px; text-align: center; ">그곳은 바로 송정 3미 국밥집!</p>
+      <img
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTFfMjQw%2FMDAxNzAyMjU2NzI3MzE1.LLfQnVKTM7SSoVRXmGjezD-gpDEyV2GHifwiLRPhmHEg.Wg2SvmDIgjY_l594mcO3qRs8MovOFCPzLE4f6Z-AsTwg.JPEG.yeslord84%2F%25C8%25AD%25B8%25F1%25BC%25F8%25B4%25EB%25B1%25B9_%25BF%25A9%25C0%25C7%25B5%25B5%25B8%25C0%25C1%25FD_%25BA%25BB%25C1%25A1_%25BC%25F8%25B4%25EB%25B1%25B9%25B8%25C0%25C1%25FD_%25BE%25CB%25B0%25F6%25C3%25A2_%252837%2529.JPG&type=sc960_832">
+      <p style="font-size: 15px; width: 900px; text-align: center; ">아침부터 웨이팅이 있었어요!</p>
+      <img
+        src="https://img.siksinhot.com/place/1537322731136078.jpg?c=Y">
+      <p style="font-size: 15px; width: 900px; text-align: center; ">반찬은 다른 국밥집들과 비슷했어요!</p>
+    </div>
   </div>
-  <div class="detailtitle">
-    <h1>부산 해운대 맛집</h1>
-  </div>
-  ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-  <div class="detailcontent">
-    <p>오늘은 부산에서 먹었던 것 중 가장 맛있었던 국밥 집에 다녀왔어요!</p>
-  </div>
-  <div>
-    <img
-      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjVfOTYg%2FMDAxNjI0NjAwNTUyMDIz.iyzCQZtH-NGxwjImotoA3vFRUlaVuAW0ZXsp3poa6zUg.xP4f5WkD428pZvJWj4RHAnyj2taTM_evuN8mxEUBLiEg.JPEG.se4206%2FIMG_9404.jpg&type=sc960_832"
-      alt="">
-  </div>
-  <div class="detailcontent">
-    <p>그 곳은 바로 수변최고돼지국밥 민락본점이였어요!</p>
-  </div>
-  <div>
-    <img
-      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMTFfMjQw%2FMDAxNzAyMjU2NzI3MzE1.LLfQnVKTM7SSoVRXmGjezD-gpDEyV2GHifwiLRPhmHEg.Wg2SvmDIgjY_l594mcO3qRs8MovOFCPzLE4f6Z-AsTwg.JPEG.yeslord84%2F%25C8%25AD%25B8%25F1%25BC%25F8%25B4%25EB%25B1%25B9_%25BF%25A9%25C0%25C7%25B5%25B5%25B8%25C0%25C1%25FD_%25BA%25BB%25C1%25A1_%25BC%25F8%25B4%25EB%25B1%25B9%25B8%25C0%25C1%25FD_%25BE%25CB%25B0%25F6%25C3%25A2_%252837%2529.JPG&type=sc960_832">
-  </div>
-  <div class="detailcontent">
-    <p>아침인데도 줄이 엄청 서있어요!</p>
-  </div>
-  <div>
-    <img
-      src="https://img.siksinhot.com/place/1537322731136078.jpg?c=Y">
-  </div>
-  <div class="detailcontent">
-    <p>국밥 하나랑 반찬은 일반 국밥집처럼 나와요!</p>
-  </div>
-
 
 
   <div class="detailbtn">
@@ -245,66 +280,159 @@
       <button onclick="openclose()" id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
     </div>
   </div>
-  <div class="comment-box" style="display: none"> 짜잔
+  <div class="comment-box" style="display: none">
+    <div class="comment-input-box">
+      <div class="user-info">
+        <label for="commentNickname"></label>
+        <input type="text" id="commentNickname" placeholder="닉네임(8자리)" maxlength="8">
+        <label for="commentPassword"></label>
+        <input type="password" id="commentPassword" placeholder="비밀번호" maxlength="16">
+      </div>
+      <div class="input-box">
+        <!--        <label for="commentInput" style="display: none"></label>-->
+        <textarea id="commentInput" placeholder="내용 입력" oninput="resize(this)"></textarea>
+      </div>
+      <div class="button-box">
+        <button id="commentButton">등록하기</button>
+      </div>
+    </div>
+
+    <div class="comment-content-box">
+      <ul id="comment-items">
+        <li class="comment-item">
+          <div class="comment-item-nickname">닉네임</div>
+          <div class="comment-item-content">댓글 내용</div>
+          <div class="comment-item-datetime">날짜</div>
+          <div class="comment-item-delete">
+            <button class="popup-button">삭제</button>
+            <div class="comment-delete-popup" style="display: none">
+              <div class="popup-password">
+                <label>
+                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                         maxlength="16">
+                </label>
+              </div>
+              <div class="popup-delete">
+                <button class="popupDeleteButton">확인</button>
+              </div>
+              <div class="popup-cancel">
+                <button class="line-box popupCancelButton" aria-label="Name">
+                  <span class="line-01"></span>
+                  <span class="line-02"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item-nickname">닉네임</div>
+          <div class="comment-item-content">댓글 내용</div>
+          <div class="comment-item-datetime">날짜</div>
+          <div class="comment-item-delete">
+            <button class="popup-button">삭제</button>
+            <div class="comment-delete-popup" style="display: none">
+              <div class="popup-password">
+                <label>
+                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                         maxlength="16">
+                </label>
+              </div>
+              <div class="popup-delete">
+                <button class="popupDeleteButton">확인</button>
+              </div>
+              <div class="popup-cancel">
+                <button class="line-box popupCancelButton" aria-label="Name">
+                  <span class="line-01"></span>
+                  <span class="line-02"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="comment-item">
+          <div class="comment-item-nickname">닉네임</div>
+          <div class="comment-item-content">댓글 내용</div>
+          <div class="comment-item-datetime">날짜</div>
+          <div class="comment-item-delete">
+            <button class="popup-button">삭제</button>
+            <div class="comment-delete-popup" style="display: none">
+              <div class="popup-password">
+                <label>
+                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
+                         maxlength="16">
+                </label>
+              </div>
+              <div class="popup-delete">
+                <button class="popupDeleteButton">확인</button>
+              </div>
+              <div class="popup-cancel">
+                <button class="line-box popupCancelButton" aria-label="Name">
+                  <span class="line-01"></span>
+                  <span class="line-02"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-  <script>
-    <!--    장현-->
-    const likeButton = document.getElementById('likeButton');
-    let isHeart = true;
-
-    likeButton.addEventListener('click', function () {
-      if (isHeart) {
-        likeButton.textContent = '🖤️ 좋아요'; // 다른 이모지로 변경
-      } else {
-        likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
-      }
-      isHeart = !isHeart;
-    });
-
-    const commentVisibleBtn = document.getElementById('commentVisibleBtn');
-    let isArrow = true;
-
-    commentVisibleBtn.addEventListener('click', function () {
-      if (isArrow) {
-        commentVisibleBtn.textContent = '💬 댓글 ︱ ▲'; // 다른 이모지로 변경
-      } else {
-        commentVisibleBtn.textContent = '💬 댓글 ︱ ▼'; // 하트 이모지로 변경
-      }
-      isArrow = !isArrow;
-    });
-    function openclose() {
-      $('.comment-box').toggle();
-    }
-    // $("#commentVisibleBtn").on("click", function () {
-    //   $(".comment-box").toggle();
-    // });
-  </script>
-
-  <script>
-    <!--    지연-->
-    const DEFAULT_HEIGHT = 68;
-
-    function resize(obj) {
-      obj.style.height = '0';
-      if (obj.scrollHeight < DEFAULT_HEIGHT) {
-        obj.style.height = -4 + obj.scrollHeight + 'px';
-      } else {
-        obj.style.height = obj.scrollHeight + 'px';
-      }
-    }
-
-    // 삭제버튼을 눌렀을때
-    $(".popup-button").on("click", function () {
-      $(".comment-delete-popup").not($(this)).css("display", "none");
-      $(".popupDeletePassword").val("");
-      $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
-    });
-    // X 눌렀을 때
-    $(".popup-cancel").on("click", function () {
-      $(".popupDeletePassword").val("");
-      $(this).closest(".comment-delete-popup").toggle();
-    });
-  </script>
 </div>
+<script>
+  <!--    장현-->
+  const likeButton = document.getElementById('likeButton');
+  let isHeart = true;
+
+  likeButton.addEventListener('click', function () {
+    if (isHeart) {
+      likeButton.textContent = '🖤️ 좋아요'; // 다른 이모지로 변경
+    } else {
+      likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
+    }
+    isHeart = !isHeart;
+  });
+
+  const commentVisibleBtn = document.getElementById('commentVisibleBtn');
+  let isArrow = true;
+
+  commentVisibleBtn.addEventListener('click', function () {
+    if (isArrow) {
+      commentVisibleBtn.textContent = '💬 댓글 ︱ ▲'; // 다른 이모지로 변경
+    } else {
+      commentVisibleBtn.textContent = '💬 댓글 ︱ ▼'; // 하트 이모지로 변경
+    }
+    isArrow = !isArrow;
+  });
+
+  $("#commentVisibleBtn").on("click", function () {
+    $(".comment-box").toggle();
+  });
+</script>
+
+<script>
+  <!--    지연-->
+  const DEFAULT_HEIGHT = 68;
+
+  function resize(obj) {
+    obj.style.height = '0';
+    if (obj.scrollHeight < DEFAULT_HEIGHT) {
+      obj.style.height = -4 + obj.scrollHeight + 'px';
+    } else {
+      obj.style.height = obj.scrollHeight + 'px';
+    }
+  }
+
+  // 삭제버튼을 눌렀을때
+  $(".popup-button").on("click", function () {
+    $(".comment-delete-popup").not($(this)).css("display", "none");
+    $(".popupDeletePassword").val("");
+    $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
+  });
+  // X 눌렀을 때
+  $(".popup-cancel").on("click", function () {
+    $(".popupDeletePassword").val("");
+    $(this).closest(".comment-delete-popup").toggle();
+  });
+</script>
 </body>
 </html>
