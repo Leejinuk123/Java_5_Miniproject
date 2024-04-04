@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/*바디 마진 제거*/
+
+/*메인 배너 27조 홈페이지 설명*/
+.main_banner {
+  background-color: gray;
+  width: 1000px;
+  margin: 0 auto;
+  height: 320px;
+  justify-content: center;
+  align-content: center;
+}
+.main_banner > h1 {
+  font-size: 50px;
+  margin: 0;
+  padding-left: 40px;
+}
+.main_banner > p {
+  font-size: 30px;
+  margin: 0;
+  padding-left: 40px;
+}
+/*메인 배너 27조 홈페이지 설명*/
+
+/*조원 소개*/
+.main_content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+.main_content > h1 {
+  flex: 1 100%;
+  text-align: center;
+  height: 40px;
+}
+
+.main_content .card {
+  flex: 0 0 200px;
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+  height: fit-content;
+}
+.main_content .card .card-img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  transition: all 0.1s;
+}
+
+/*반응형 설계*/
+@media screen and (max-width: 1000px) {
+  .main_content {
+    width: 100%;
+  }
+}
+/*조원소개*/
+
+/*지역소개 , 지역소개 밑 아웃트로*/
+.intro {
+  background-color: gray;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: fit-content;
+  padding: 20px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.intro .text {
+  height: fit-content;
+  text-align: center;
+}
+.intro .text > h1 {
+  margin: 0;
+  padding: 20px 0px;
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+.intro .text > hr {
+  width: 80px;
+  margin: 10px auto;
+  border-color: black;
+  border-width: 2px;
+}
+
+.intro ul {
+  padding: 0;
+  list-style-type: none;
+
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.intro ul > li {
+  flex: 0 200px;
+  margin: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: all 1.0s;
+}
+.intro > ul > li .intro-img {
+  width: 200px;
+  border: 1px solid black;
+  height: 300px;
+}
+.intro > ul > li > p {
+  margin-top: 5px;
+}
+.intro ul li a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.intro .outro {
+  padding: 20px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 0 auto;
+  height: 250px;
+}
+/*지역소개 , 지역소개 밑 아웃트로*/
+
+/*반응형 설계*/
+@media screen and (max-width: 768px) {
+  .intro ul > li {
+    flex: 0 0 200px; /* 화면이 작을 때 두 개의 li를 가로로 나누기 위해 48% */
+  }
+}
+@media screen and (max-width: 480px) {
+  .intro .text > h1 {
+    font-size: 20px;
+  }
+  .intro ul > li {
+    flex: 0 0 200px; /* 화면이 작아질 때 한 개의 li가 가로로 나오도록 */
+  }
+}
