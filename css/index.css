@@ -106,6 +106,8 @@ body {
   flex: 0 200px;
   margin: 10px;
   text-align: center;
+  opacity: 0;
+  transition: all 1.0s;
 }
 .intro > ul > li .intro-img {
   width: 200px;

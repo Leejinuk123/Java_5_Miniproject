@@ -121,6 +121,24 @@
     });
   //header.html 가져와서 붙이기.
 </script>
+<script>
+  let observer = new IntersectionObserver((e)=>{
+    e.forEach((card)=>{
+      if(card.isIntersecting){
+        card.target.style.opacity = 1;
+      } else {
+        card.target.style.opacity = 0;
+      }
+    })
+  })
 
+  let li = document.querySelectorAll("li");
+  console.log(li);
+  observer.observe(li[0]);
+  observer.observe(li[1]);
+  observer.observe(li[2]);
+  observer.observe(li[3]);
+
+</script>
 </body>
 </html>
