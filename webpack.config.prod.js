@@ -14,8 +14,7 @@ module.exports = merge(common, {
         { from: 'img', to: 'img' },
         { from: 'css', to: 'css' },
         { from: 'js/vendor', to: 'js/vendor' },
-        { from: 'robots.txt', to: 'robots.txt' },
-        { from: '404.html', to: '404.html' },
+        { from: 'robots.txt', to: 'robots.txt' }
       ],
     }),
   ],
