@@ -11,6 +11,7 @@
   padding: 0 20px; /* 좌우 여백을 줍니다 */
   box-sizing: border-box;
 }
+
 @media screen and (max-width: 1000px) {
   .header {
     width: 100%;
@@ -21,15 +22,18 @@
   text-align: center;
   padding-right: 400px;
 }
+
 .header .header_text_box h2 {
   margin: 0;
   font-size: 24px;
 
 }
+
 .header .header_text_box p {
   margin: 0;
   font-size: 16px;
 }
+
 .header .header_text_box a {
   color: #000; /* 링크 텍스트 색상을 원하는 색상으로 변경 */
   text-decoration: none; /* 밑줄 제거 */
