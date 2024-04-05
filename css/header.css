@@ -10,6 +10,7 @@
   justify-content: space-between;
   padding: 0 20px; /* 좌우 여백을 줍니다 */
   box-sizing: border-box;
+  
 }
 @media screen and (max-width: 1000px) {
   .header {
