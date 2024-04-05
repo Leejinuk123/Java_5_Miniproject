@@ -1,5 +1,5 @@
 .header {
-  background-image: url("../img/headerImg.svg");
+  background-color: whitesmoke;
   background-size: cover; /* 배경 이미지를 요소에 맞게 자동으로 조절합니다 */
   background-repeat: no-repeat;
   width: 1000px;
@@ -19,10 +19,12 @@
 
 .header .header_text_box {
   text-align: center;
+  padding-right: 400px;
 }
 .header .header_text_box h2 {
   margin: 0;
   font-size: 24px;
+
 }
 .header .header_text_box p {
   margin: 0;
