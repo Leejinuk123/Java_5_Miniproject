@@ -69,9 +69,9 @@ body {
     width: 100%;
   }
 }
-/*조원소개*/
+/*조원소개 끝*/
 
-/*지역소개 , 지역소개 밑 아웃트로*/
+/*지역소개 , 아웃트로*/
 .intro {
   background-color: whitesmoke;
   border-top: 1px solid lightgray;
@@ -129,7 +129,7 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
-.intro .outro {
+.intro .footer {
   color: rgba(255, 255, 255, 0.77);
   background-color: rgba(34, 36, 38, 0.89);
   border-top: 2px solid black;
@@ -138,7 +138,7 @@ body {
   height: 250px;
   padding: 20px;
 }
-/*지역소개 , 지역소개 밑 아웃트로*/
+/*지역소개 , 아웃트로*/
 
 /*반응형 설계*/
 @media screen and (max-width: 768px) {
