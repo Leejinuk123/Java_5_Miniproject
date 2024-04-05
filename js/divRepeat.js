@@ -10,8 +10,8 @@ const cardData = [
     "img":"https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg"
   },
   {"name":"주장현",
-    "intro":"자기소개",
-    "img":"https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg"
+    "intro":"하루에 국밥 네끼<br> 먹는거 좋아하는 소개",
+    "img":"https://i.ytimg.com/vi/euMU4VK8cQ4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBNWv0UceagUgZa5WpP419uMVUf6A"
   },
   {"name":"원지연",
     "intro":"자기소개",
