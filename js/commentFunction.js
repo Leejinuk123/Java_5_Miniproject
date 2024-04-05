@@ -108,7 +108,7 @@ $(".popupDeleteButton").on("click", async function () {
   let password = closestList.find(".popupDeletePassword").val();
   console.log("입력 값\ncommentId : " + commentId + "\npassword : " + password);
 
-  let testDoc = await getDoc(doc(db, 'comments', commentId));
+  let testDoc = await getDoc(doc(db, "comments", commentId));
   if (password === testDoc.data().password) {
     await deleteDoc(doc(db, "comments", commentId))
       .then(function () {
