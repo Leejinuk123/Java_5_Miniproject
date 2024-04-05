@@ -125,9 +125,9 @@ body {
 .intro ul li a {
   padding: 5px;
   text-decoration: none;
-  color: black;
-  border: 1px solid black;
-  border-radius: 10px;
+  color: rgba(34, 36, 38, 0.89);
+  border: 1px solid rgba(34, 36, 38, 0.89);
+  border-radius: 5px;
 }
 .intro .outro {
   color: rgba(255, 255, 255, 0.77);
