@@ -59,10 +59,7 @@ docs.forEach((doc) => {
           <button class="popup-button">삭제</button>
           <div class="comment-delete-popup" style="display: none">
             <div class="popup-password">
-              <label>
-                <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                       maxlength="16">
-              </label>
+                <input type="password" class="popupDeletePassword" placeholder="비밀번호" maxlength="16">
             </div>
             <div class="popup-delete">
               <button class="popupDeleteButton">확인</button>
@@ -106,11 +103,12 @@ $("#commentButton").on("click", async function () {
 
 // 댓글 삭제
 $(".popupDeleteButton").on("click", async function () {
-  let parentList = $(".comment-delete-popup").closest("li");
-  let commentId = parentList.find(".comment-id").val();
-  let password = parentList.find(".popupDeletePassword").val();
+  let closestList = $(this).parents("li");
+  let commentId = closestList.find(".comment-id").val();
+  let password = closestList.find(".popupDeletePassword").val();
+  console.log("입력 값\ncommentId : " + commentId + "\npassword : " + password);
 
-  let testDoc = await getDoc(doc(db, 'comments', commentId));
+  let testDoc = await getDoc(doc(db, "comments", commentId));
   if (password === testDoc.data().password) {
     await deleteDoc(doc(db, "comments", commentId))
       .then(function () {
@@ -123,7 +121,7 @@ $(".popupDeleteButton").on("click", async function () {
   } else {
     alert("비밀번호 틀림");
   }
-  parentList.find(".popupDeletePassword").val("");
+  closestList.find(".popupDeletePassword").val("");
 });
 
 // 삭제버튼을 눌렀을때
