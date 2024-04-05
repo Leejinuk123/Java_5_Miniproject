@@ -5,49 +5,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-<!--  <script type="module">-->
-<!--    // Firebase SDK 라이브러리 가져오기-->
-<!--    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";-->
-<!--    import {getFirestore} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";-->
-<!--    import {collection, addDoc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";-->
-<!--    import {getDocs} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";-->
-
-
-<!--    const firebaseConfig = {-->
-<!--      apiKey: "AIzaSyA0uKRVhtA_nWErGz239LyUEbzImyz1zK8",-->
-<!--      authDomain: "sparta-5c4c5.firebaseapp.com",-->
-<!--      projectId: "sparta-5c4c5",-->
-<!--      storageBucket: "sparta-5c4c5.appspot.com",-->
-<!--      messagingSenderId: "670267606385",-->
-<!--      appId: "1:670267606385:web:ccd38ce10b5feb6a7ca2d0"-->
-<!--    };-->
-
-<!--    // Firebase 인스턴스 초기화-->
-<!--    const app = initializeApp(firebaseConfig);-->
-<!--    const db = getFirestore(app);-->
-
-<!--    // $("#commentButton").click(async function () {-->
-<!--    //   let doc = {};-->
-<!--    //   await addDoc(collection(db, "콜렉션이름"), doc);-->
-<!--    // });-->
-
-<!--    /*-->
-<!--    <div class="user-info">-->
-<!--        <label for="commentNickname"></label>-->
-<!--        <input type="text" id="commentNickname" placeholder="닉네임(8자리)" maxlength="8">-->
-<!--        <label for="commentPassword"></label>-->
-<!--        <input type="password" id="commentPassword" placeholder="비밀번호" maxlength="16">-->
-<!--      </div>-->
-<!--      <div class="input-box">-->
-<!--        &lt;!&ndash;        <label for="commentInput" style="display: none"></label>&ndash;&gt;-->
-<!--        <textarea id="commentInput" placeholder="내용 입력" oninput="resize(this)"></textarea>-->
-<!--      </div>-->
-<!--      <div class="button-box">-->
-<!--        <button id="commentButton">등록하기</button>-->
-<!--      </div>-->
-<!--    */-->
-<!--  </script>-->
-
+  <script src="js/commentFunction.js" type="module"></script>
 
   <style>
     * {
@@ -300,9 +258,10 @@
       <button id="likeButton">🤍 좋아요</button>
     </div>
     <div class="commentbtn">
-      <button onclick="openclose()" id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
+      <button id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
     </div>
   </div>
+
   <div class="comment-box" style="display: none">
     <div class="comment-input-box">
       <div class="user-info">
@@ -322,81 +281,6 @@
 
     <div class="comment-content-box">
       <ul id="comment-items">
-        <li class="comment-item">
-          <div class="comment-item-nickname">닉네임</div>
-          <div class="comment-item-content">댓글 내용</div>
-          <div class="comment-item-datetime">날짜</div>
-          <div class="comment-item-delete">
-            <button class="popup-button">삭제</button>
-            <div class="comment-delete-popup" style="display: none">
-              <div class="popup-password">
-                <label>
-                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                         maxlength="16">
-                </label>
-              </div>
-              <div class="popup-delete">
-                <button class="popupDeleteButton">확인</button>
-              </div>
-              <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="comment-item">
-          <div class="comment-item-nickname">닉네임</div>
-          <div class="comment-item-content">댓글 내용</div>
-          <div class="comment-item-datetime">날짜</div>
-          <div class="comment-item-delete">
-            <button class="popup-button">삭제</button>
-            <div class="comment-delete-popup" style="display: none">
-              <div class="popup-password">
-                <label>
-                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                         maxlength="16">
-                </label>
-              </div>
-              <div class="popup-delete">
-                <button class="popupDeleteButton">확인</button>
-              </div>
-              <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="comment-item">
-          <div class="comment-item-nickname">닉네임</div>
-          <div class="comment-item-content">댓글 내용</div>
-          <div class="comment-item-datetime">날짜</div>
-          <div class="comment-item-delete">
-            <button class="popup-button">삭제</button>
-            <div class="comment-delete-popup" style="display: none">
-              <div class="popup-password">
-                <label>
-                  <input type="password" class="popupDeletePassword" name="popupDeletePassword" placeholder="비밀번호"
-                         maxlength="16">
-                </label>
-              </div>
-              <div class="popup-delete">
-                <button class="popupDeleteButton">확인</button>
-              </div>
-              <div class="popup-cancel">
-                <button class="line-box popupCancelButton" aria-label="Name">
-                  <span class="line-01"></span>
-                  <span class="line-02"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
@@ -424,11 +308,8 @@
     } else {
       commentVisibleBtn.textContent = '💬 댓글 ︱ ▼'; // 하트 이모지로 변경
     }
-    isArrow = !isArrow;
-  });
-
-  $("#commentVisibleBtn").on("click", function () {
     $(".comment-box").toggle();
+    isArrow = !isArrow;
   });
 </script>
 
@@ -444,16 +325,6 @@
       obj.style.height = obj.scrollHeight + 'px';
     }
   }
-
-  // 삭제버튼을 눌렀을때
-  $(".popup-button").on("click", function () {
-    $(".comment-delete-popup").not($(this)).css("display", "none");
-    $(".popupDeletePassword").val("");
-    $(this).closest(".comment-item-delete").find(".comment-delete-popup").toggle();
-  });
-  // X 눌렀을 때
-  $(".popup-cancel").on("click", function () {
-    $(".popupDeletePassword").val("");
-    $(this).closest(".comment-delete-popup").toggle();
-  });
-
+</script>
+</body>
+</html>
