@@ -8,7 +8,6 @@
   margin: 30px auto;
   border: 1px double black;
   border-radius: 15px;
-  background-color: whitesmoke;
 }
 
 .detail-content .post-title {
@@ -140,7 +139,7 @@
 
 .comment-delete-popup {
   padding: 5px;
-  background: #ffaeae;
+  background: #aedcff;
   display: flex;
   position: absolute;
   align-items: center;
