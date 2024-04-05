@@ -123,12 +123,23 @@ body {
   text-align: center;
   opacity: 0;
   transition: all 1.0s;
+  /*overflow: hidden;*/
 }
 
 .intro > ul > li .intro-img {
   width: 200px;
   border: 1px solid black;
   height: 300px;
+  overflow: hidden;
+}
+.intro > ul > li .intro-img img{
+  width: 200px;
+  height: 300px;
+}
+.intro > ul > li .intro-img #busan{
+  width: 400px;
+  height: 300px;
+  margin-left: -60%;
 }
 
 .intro > ul > li > p {

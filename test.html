@@ -1,212 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <style>
-    body {
-      overflow-y: scroll;
-      font-size: 12px;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .Local-tab {
-      position: relative;
-      width: 100%;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    .Local-tab .conTab .tab {
-      position: relative;
-      width: 800px;
-      height: 30px;
-      margin: 50px auto 30px;
-      background: #f7f7f7;
-      border: 1px solid #dfdfdf;
-    }
-
-    .Local-tab .conTab .tab .active-tab {
-      width: 200px;
-      background-color: gray;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 30px;
-      line-height: 30px;
-      color: #fff;
-      transition: .2s ease;
-    }
-
-    .Local-tab .conTab .tab>ul{
-      height: 32px;
-      padding: 0; /* 내부 여백 제거 */
-      margin: 0; /* 외부 여백 제거 */
-    }
-
-    .Local-tab .conTab .tab>ul>li {
-      float: left;
-      font-size: 11px;
-      font-weight: bold;
-      color: #333;
-      width: 25%;
-      text-align: center;
-      height: 30px;
-      line-height: 30px;
-      list-style-type: none;
-
-    }
-
-    .Local-tab .conTab .tab>ul>li>a {
-      color: #333;
-      display: block;
-    }
-
-    .conArea {
-      position: absolute;
-      left: 50%;
-      top: 50px;
-      width: 1180px;
-      margin-left: -580px;
-      padding: 0 0px;
-      text-align: left;
-      display: none;
-    }
-
-    .conArea.show {
-      display: block;
-    }
-
-    .conArea.show>img {
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
-
 <body>
-<div class="Local-tab">
-  <div class="conTab">
-    <div class="tab">
-      <div class="active-tab" id="active-tab">목포/김민규</div>
-      <ul>
-        <li>
-          <a href="#" class="menu" data-index="0" id="conTabSub1">목포/김민규</a>
-          <div class="conArea show">
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-          </div>
-        </li>
-        <li>
-          <a href="#" class="menu" data-index="1">김천/이진욱</a>
-          <div class="conArea">
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-          </div>
-        </li>
-        <li>
-          <a href="#" class="menu" data-index="2">부산/주장현</a>
-          <div class="conArea">
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-          </div>
-        </li>
-        <li>
-          <a href="#" class="menu" data-index="3">대구/원지연</a>
-          <div class="conArea">
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-            <p>부산에 대한 소개 Lorem ipsum dolor sit amet, consectetur adipisicing elit.Corporis culpa, cum dicta doloribus eaque eum illum impedit incidunt iure laboriosam laudantium, modi p
-              rovident quas quos repellat suscipit veniam vitae voluptas!
-            </p>
-            <img src="https://placehold.co/300" />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!--<script src="js/jquery.js"></script>-->
-  <script>
-    let liList = document.querySelectorAll(".menu");
+<h1>좋아요 수: <span id="likeCount">0</span></h1>
+<button id="likeButton">좋아요</button>
 
-    liList.forEach((liItem) => {
-      liItem.addEventListener('click', (e) => {
-        let activeTabText = liItem.innerText;
-        let index = liItem.getAttribute('data-index');
-        let left = 200 * index;
-        let activeTab = document.querySelector(".active-tab");
-        activeTab.style.left = left + "px";
-        activeTab.innerText = activeTabText;
-        let show = document.querySelector(".show");
-        console.dir(show);
-        fadeOut(show);
-        show.classList.remove('show');
-        fadeIn(liItem.nextElementSibling);
-        liItem.nextElementSibling.classList.add('show');
-      }, true);
-    })
-    function fadeIn(target) {
-      var level = 0;
-      var inTimer = null;
-      inTimer = setInterval(function () {
-        level = fadeInAction(target, level, inTimer);
-      }, 50);
-    }
-    function fadeInAction(target, level, inTimer) {
-      level = level + 0.1;
-      changeOpacity(target, level);
-      if (level > 1) clearInterval(inTimer);
-      return level;
-    }
-    function fadeOut(target) {
-      var level = 1;
-      var outTimer = null;
-      outTimer = setInterval(function () {
-        level = fadeOutAction(target, level, outTimer);
-      }, 50);
-    }
-    function fadeOutAction(target, level, outTimer) {
-      level = level - 0.1;
-      changeOpacity(target, level);
-      if (level < 0) {
-        clearInterval(outTimer);
-      }
-      return level;
-    }
-    function changeOpacity(target, level) {
-      var obj = target;
-      obj.style.opacity = level;
-      obj.style.MozOpacity = level;
-      obj.style.KhtmlOpacity = level;
-      obj.style.MsFilter = "'progid: DXImageTransform.Microsoft.Alpha(Opacity=" + (level * 100) + ")'";
-      obj.style.filter = "alpha(opacity=" + (level * 100) + ");";
-    }
-  </script>
-</div>
+<script src="script.js"></script>
 </body>
+<script>
+  // 쿠키에서 좋아요 수 가져오기
+  function getLikeCountFromCookie() {
+    const cookieName = "likeCount";
+    const cookieValue = document.cookie
+      .split('; ')
+      .find(row => row.startsWith(cookieName + '='))
+      ?.split('=')[1];
 
+    // 만약 쿠키에 좋아요 수가 없으면 0 반환
+    return cookieValue ? parseInt(cookieValue) : 0;
+  }
+
+  // 쿠키에 좋아요 수 저장하기
+  function setLikeCountToCookie(count) {
+    const date = new Date();
+    date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); // 쿠키 만료 기간 설정 (7일)
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = "likeCount=" + count + ";" + expires + ";path=/";
+  }
+
+  // 페이지 로드 시 좋아요 수 초기화
+  let likeCount = getLikeCountFromCookie();
+  document.getElementById("likeCount").textContent = likeCount;
+
+  // 좋아요 버튼 클릭 시 이벤트 처리
+  document.getElementById("likeButton").addEventListener("click", function() {
+    likeCount++;
+    document.getElementById("likeCount").textContent = likeCount;
+    setLikeCountToCookie(likeCount);
+  });
+
+</script>
 </html>
