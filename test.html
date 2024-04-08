@@ -11,39 +11,66 @@
 <h1>좋아요 수: <span id="likeCount">0</span></h1>
 <button id="likeButton">좋아요</button>
 
-<script src="script.js"></script>
+<!-- JavaScript 파일 연결 -->
+<!--<script src="script.js"></script>-->
 </body>
 <script>
-  // 쿠키에서 좋아요 수 가져오기
-  function getLikeCountFromCookie() {
-    const cookieName = "likeCount";
-    const cookieValue = document.cookie
-      .split('; ')
-      .find(row => row.startsWith(cookieName + '='))
-      ?.split('=')[1];
+  // 좋아요 수 초기화
+  let likeCount = 0;
 
-    // 만약 쿠키에 좋아요 수가 없으면 0 반환
-    return cookieValue ? parseInt(cookieValue) : 0;
-  }
-
-  // 쿠키에 좋아요 수 저장하기
-  function setLikeCountToCookie(count) {
-    const date = new Date();
-    date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); // 쿠키 만료 기간 설정 (7일)
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = "likeCount=" + count + ";" + expires + ";path=/";
-  }
-
-  // 페이지 로드 시 좋아요 수 초기화
-  let likeCount = getLikeCountFromCookie();
-  document.getElementById("likeCount").textContent = likeCount;
-
-  // 좋아요 버튼 클릭 시 이벤트 처리
-  document.getElementById("likeButton").addEventListener("click", function() {
-    likeCount++;
+  // 페이지 로드 시 쿠키에서 좋아요 수 가져오기
+  if (getCookie("likeCount")) {
+    likeCount = parseInt(getCookie("likeCount"));
     document.getElementById("likeCount").textContent = likeCount;
-    setLikeCountToCookie(likeCount);
+  }
+
+  let liked = false;
+
+  // 좋아요 버튼 클릭 이벤트
+  document.getElementById("likeButton").addEventListener("click", function() {
+    // 좋아요 상태에 따라 동작
+    if (liked) {
+      likeCount--;
+      liked = false;
+      document.getElementById("likeCount").textContent = likeCount;
+      document.getElementById("likeButton").textContent = "좋아요";
+    } else {
+      likeCount++;
+      liked = true;
+      document.getElementById("likeCount").textContent = likeCount;
+      document.getElementById("likeButton").textContent = "취소";
+    }
+
+    // 좋아요 수 쿠키에 저장
+    setCookie("likeCount", likeCount, 7); // 7일 동안 유지
   });
+
+  // 쿠키 설정 함수
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  // 쿠키 가져오기 함수
+  function getCookie(name) {
+    let nameEQ = name + "=";
+    let cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1, cookie.length);
+      }
+      if (cookie.indexOf(nameEQ) === 0) {
+        return cookie.substring(nameEQ.length, cookie.length);
+      }
+    }
+    return null;
+  }
 
 </script>
 </html>
