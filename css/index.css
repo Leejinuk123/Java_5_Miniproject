@@ -144,6 +144,12 @@ body {
   width: 200px;
   height: 300px;
 }
+
+.intro > ul > li .intro-img #mokpo{
+  width: 400px;
+  height: 300px;
+  margin-left: -60%;
+}
 .intro > ul > li .intro-img #busan{
   width: 400px;
   height: 300px;

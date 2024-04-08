@@ -58,7 +58,7 @@
 
   <div class="detailbtn">
     <div class="likebtn">
-      <button id="likeButton">🤍 좋아요</button>
+      <button id="likeButton">🤍 좋아요 <span id="likeCount">0</span></button>
     </div>
     <div class="commentbtn">
       <button id="commentVisibleBtn">💬 댓글 ︱ ▼</button>
@@ -90,17 +90,58 @@
 </div>
 <script>
   <!--    장현-->
+  // 좋아요 버튼 시작
   const likeButton = document.getElementById('likeButton');
-  let isHeart = true;
+  let isHeart = false;
+  let likeCount = 0;
+
+  // 페이지 로드 시 쿠키에서 좋아요 수 가져오기
+  if (getCookie("likeCount")) {
+    likeCount = parseInt(getCookie("likeCount"));
+    document.getElementById("likeCount").textContent = likeCount;
+  }
 
   likeButton.addEventListener('click', function () {
     if (isHeart) {
-      likeButton.textContent = '🖤️ 좋아요'; // 다른 이모지로 변경
+      likeCount--;
+      isHeart = false;
+      document.getElementById("likeButton").innerHTML = `🤍 좋아요 <span id="likeCount">${likeCount}</span>`;
     } else {
-      likeButton.textContent = '🤍 좋아요'; // 하트 이모지로 변경
+      likeCount++;
+      isHeart = true;
+      document.getElementById("likeButton").innerHTML = `❤️ 좋아요 <span id="likeCount">${likeCount}</span>`;
     }
-    isHeart = !isHeart;
+
+    // 좋아요 수 쿠키에 저장
+    setCookie("likeCount", likeCount, 7); // 7일 동안 유지
   });
+
+  function getCookie(name) {
+    let nameEQ = name + "=";
+    let cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1, cookie.length);
+      }
+      if (cookie.indexOf(nameEQ) === 0) {
+        return cookie.substring(nameEQ.length, cookie.length);
+      }
+    }
+    return null;
+  }
+
+  // 쿠키 설정 함수
+  function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+  //좋아요 버튼 끝
 
   const commentVisibleBtn = document.getElementById('commentVisibleBtn');
   let isArrow = true;
@@ -114,9 +155,6 @@
     $(".comment-box").toggle();
     isArrow = !isArrow;
   });
-</script>
-
-<script>
   <!--    지연-->
   const DEFAULT_HEIGHT = 68;
 
