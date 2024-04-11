@@ -3,13 +3,13 @@ let createCardImg = document.querySelectorAll('.card');
 const cardData = [
   {
     "name": "김민규",
-    "intro": "자기소개",
-    "img": "https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg"
+    "intro": "활동적이고 삶을 재밌게 살아봐요",
+    "img": "https://firebasestorage.googleapis.com/v0/b/sparta-5c4c5.appspot.com/o/1_profile.jpg?alt=media&token=49fe78ba-1c93-4656-be9f-ca8bfcdb3f4d"
   },
   {
     "name": "이진욱",
-    "intro": "자기소개",
-    "img": "https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg"
+    "intro": "25살 코딩하는 남자",
+    "img": "https://firebasestorage.googleapis.com/v0/b/sparta-5c4c5.appspot.com/o/3_profile.jpg?alt=media&token=f65467dd-8867-4f84-9b6c-f5a9d61c3ff7"
   },
   {
     "name": "주장현",
@@ -18,8 +18,8 @@ const cardData = [
   },
   {
     "name": "원지연",
-    "intro": "자기소개",
-    "img": "https://3.bp.blogspot.com/-fRPuZTBN2rE/TodGV8UaVHI/AAAAAAAAO_o/G2xJUAZuawQ/s1600/pingu.jpg"
+    "intro": "펩시 제로 라임 최고",
+    "img": "https://firebasestorage.googleapis.com/v0/b/sparta-5c4c5.appspot.com/o/4_profile.jpg?alt=media&token=141ad445-aae8-4378-a913-2d3443da6d01"
   }
 ];
 

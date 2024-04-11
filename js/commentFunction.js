@@ -30,7 +30,18 @@ const db = getFirestore(app);
 const urlParams = new URL(location.href).searchParams;
 const currentDetail = urlParams.get('detail');
 
-/*댓글 초기화*/
+
+/*게시물 불러오기*/
+let postDoc = await getDoc(doc(db, "posts", currentDetail));
+let temp_title = `${postDoc.data().title}`;
+let temp_subTitle = `${postDoc.data().subTitle}`;
+let temp_content = `${postDoc.data().content}`;
+$('.detail-content .post-title h1').append(temp_title);
+$('.detail-content .post-title h6').append(temp_subTitle);
+$('.detail-content .post-content').append(temp_content);
+
+
+/*댓글 불러오기*/
 // onSnapshot??????????
 let docs = await getDocs(query(collection(db, "comments"), where("detail", "==", currentDetail), orderBy("createAt", "asc")));
 docs.forEach((doc) => {
@@ -77,6 +88,7 @@ docs.forEach((doc) => {
   $("#comment-items").append(temp_comment);
 });
 
+
 $("#commentButton").on("click", async function () {
   let nickname = $("#commentNickname").val();
   let password = $("#commentPassword").val();
@@ -103,7 +115,7 @@ $("#commentButton").on("click", async function () {
 
 // 댓글 삭제
 $(".popupDeleteButton").on("click", async function () {
-  let closestList = $(this).parents("li");
+  let closestList = $(this).closest("li");
   let commentId = closestList.find(".comment-id").val();
   let password = closestList.find(".popupDeletePassword").val();
   console.log("입력 값\ncommentId : " + commentId + "\npassword : " + password);
@@ -124,14 +136,15 @@ $(".popupDeleteButton").on("click", async function () {
   closestList.find(".popupDeletePassword").val("");
 });
 
+
 // 삭제버튼을 눌렀을때
 $(".popup-button").on("click", function () {
-  $(".comment-delete-popup").not($(this)).css("display", "none");
-  $(".popupDeletePassword").val("");
-  $(this).closest(".comment-item-delete").find(".comment-delete-popup").show();
+    $(".comment-delete-popup").not($(this)).css("display", "none");
+    $(".popupDeletePassword").val("");
+    $(this).closest(".comment-item-delete").find(".comment-delete-popup").show();
 });
 // X 눌렀을 때
 $(".popup-cancel").on("click", function () {
-  $(".popupDeletePassword").val("");
-  $(this).closest(".comment-delete-popup").hide();
+    $(".popupDeletePassword").val("");
+    $(this).closest(".comment-delete-popup").hide();
 });

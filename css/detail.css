@@ -3,212 +3,231 @@
 
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .all-content {
-  width: 1000px;
-  margin: 30px auto;
-  border: 1px double black;
-  border-radius: 15px;
+    width: 1000px;
+    margin: 30px auto;
+    border: 1px double black;
+    border-radius: 15px;
 }
 
 .detail-content .post-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .detail-content .post-content {
-  width: 1000px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  gap: 30px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 30px;
 }
 
 .detail-content .post-content img {
-  width: 500px;
+    width: 500px;
 }
 
 .detail-content .post-content p {
-  width: 500px;
+    width: 500px;
 }
 
 .detailbtn {
-  display: flex;
-  margin: 30px auto 30px 50px;
+    display: flex;
+    margin: 30px auto 30px 50px;
 }
 
 .likebtn {
-  border: 3px solid darkgray;
-  margin-right: 10px;
+    border: 3px solid darkgray;
+    margin-right: 10px;
 }
 
 .commentbtn {
-  border: 3px solid darkgray;
+    border: 3px solid darkgray;
 }
 
 #likeButton, #commentVisibleBtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background: none;
-  border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .comment-box {
-  width: 96%;
-  margin: 0 auto;
-  background: #dcdcdc;
-  padding: 12px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+    width: 96%;
+    margin: 0 auto;
+    background: #dcdcdc;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .comment-input-box {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .comment-input-box .user-info {
-  display: flex;
-  flex-direction: column;
-  height: auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .comment-input-box .user-info #commentNickname, #commentPassword {
-  width: 128px;
-  padding: 5px;
+    width: 128px;
+    padding: 5px;
 }
 
 .comment-input-box .user-info #commentNickname {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .comment-input-box .button-box #commentButton {
-  padding: 5px;
+    padding: 5px;
 }
 
 .input-box {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .input-box #commentInput {
-  padding: 5px;
-  width: 100%;
-  min-height: 68px;
-  overflow-y: hidden;
-  resize: none;
-  box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    min-height: 68px;
+    overflow-y: hidden;
+    resize: none;
+    box-sizing: border-box;
 }
 
 .comment-content-box {
 }
 
 .comment-content-box #comment-items {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment-content-box .comment-item {
-  padding: 10px;
-  gap: 20px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px groove black;
+    padding: 10px;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px groove black;
 }
 
 .comment-content-box .comment-item-nickname {
-  width: 132px;
+    width: 132px;
 }
 
 .comment-content-box .comment-item-content {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .comment-content-box .comment-item-datetime {
 }
 
 .comment-content-box .comment-item-delete {
-  position: relative;
+    position: relative;
 }
 
 .comment-content-box .comment-item-delete button {
-  padding: 5px;
+    padding: 5px;
 }
 
 .comment-delete-popup {
-  padding: 5px;
-  background: #aedcff;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  left: -48px;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    padding: 5px;
+    background: #aedcff;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: -48px;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .popup-cancel {
-  position: relative;
-  width: 32px; /* X 사이즈 */
-  height: 32px; /* X 세로 중앙 */
-  margin: 0 auto; /* 가운데 정렬 */
+    position: relative;
+    width: 32px; /* X 사이즈 */
+    height: 32px; /* X 세로 중앙 */
+    margin: 0 auto; /* 가운데 정렬 */
 }
 
 .popup-cancel .line-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .popup-cancel .line-box > span {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  width: 60%;
-  height: 2px;
-  background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background-color: #000;
 }
 
 .popup-cancel .line-01 {
-  transform: rotate(135deg) translateX(0%);
+    transform: rotate(135deg) translateX(0%);
 }
 
 .popup-cancel .line-02 {
-  transform: rotate(45deg) translateX(0%);
+    transform: rotate(45deg) translateX(0%);
 }
 
 .comment-delete-popup .popupDeletePassword {
-  padding: 5px;
-  width: 102px;
-  height: 32px;
-  box-sizing: border-box;
+    padding: 5px;
+    width: 102px;
+    height: 32px;
+    box-sizing: border-box;
 }
 
 .comment-delete-popup .popupDeleteButton {
-  width: 44px;
-  height: 32px;
-  box-sizing: border-box;
+    width: 44px;
+    height: 32px;
+    box-sizing: border-box;
+}
+
+.detail-content .post-content p {
+    width: 900px;
+    text-align: center;
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.detail-content .post-title h1 {
+    font-family: "Do Hyeon", sans-serif;
+    font-style: normal;
+    font-variant-ligatures: common-ligatures;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.detail-content .post-title h6 {
+    font-size: 15px;
+    color: darkgray;
+    padding-top: 15px;
+    font-weight: 300;
 }
 
 .pick-we {
-  font-family: "Single Day", cursive;
-  font-weight: 400;
-  font-style: normal;
+    /*바로 위 .detail-content .post-content p {} 이쪽에 있음*/
 }
 
 .main_title {
-  font-family: "Do Hyeon", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-variant-ligatures: common-ligatures;
+    /*바로 위 .detail-content .post-title h1 {} 이쪽에 있음*/
 }
